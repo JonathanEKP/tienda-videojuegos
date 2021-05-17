@@ -85,7 +85,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(-30, 12);
+            this.button1.Location = new System.Drawing.Point(-36, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(174, 36);
             this.button1.TabIndex = 4;
@@ -99,7 +99,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.pictureBox1.Location = new System.Drawing.Point(188, 66);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(113, 143);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
