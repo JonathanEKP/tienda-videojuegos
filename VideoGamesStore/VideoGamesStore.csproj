@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormulariosAdmin\frmAdminVideojuegos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmAdminVideojuegos.Designer.cs">
+      <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormulariosAdmin\frmAdminVideojuegos.resx">
+      <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\Form1.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
