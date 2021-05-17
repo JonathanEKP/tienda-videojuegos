@@ -1,0 +1,11 @@
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\bin\Debug\VideoGamesStore.exe.config
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\bin\Debug\VideoGamesStore.exe
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\bin\Debug\VideoGamesStore.pdb
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.csprojAssemblyReference.cache
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.Login.resources
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.Properties.Resources.resources
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.csproj.GenerateResource.cache
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.csproj.CoreCompileInputs.cache
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.exe
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.pdb
+C:\Users\jonat\Documents\proyectotiendavideojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosVentas.frmPrincipal.resources
