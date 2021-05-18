@@ -52,28 +52,52 @@
     <Compile Include="FormulariosAdmin\frmAdminVideojuegos.Designer.cs">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosVentas\frmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmAdd.Designer.cs">
+      <DependentUpon>frmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmCarrito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmCarrito.Designer.cs">
+      <DependentUpon>frmCarrito.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmFactura.Designer.cs">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormulariosVentas\frmPrincipal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormulariosVentas\Form1.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormulariosAdmin\frmAdminVideojuegos.resx">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosVentas\Form1.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosVentas\frmAdd.resx">
+      <DependentUpon>frmAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormulariosVentas\frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="FormulariosVentas\frmCarrito.resx">
+      <DependentUpon>frmCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosVentas\frmFactura.resx">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosVentas\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -100,8 +124,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="FormulariosMantenimiento\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace VideoGamesStore.FormulariosVentas
 {
-    public partial class frmPrincipal : Form
+    public partial class frmMain : Form
     {
-        public frmPrincipal()
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void btnCarro_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
