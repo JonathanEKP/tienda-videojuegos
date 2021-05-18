@@ -189,7 +189,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "frmAdminVideojuegos";
-            this.Text = "frmAdminVideojuegos";
+            this.Text = "Administración de videojuegos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
