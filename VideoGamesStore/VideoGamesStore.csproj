@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormulariosAdmin\frmAdminClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmAdminClientes.Designer.cs">
+      <DependentUpon>frmAdminClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosAdmin\frmAdminPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="FormulariosAdmin\frmAdminVideojuegos.Designer.cs">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmOrdenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmOrdenes.Designer.cs">
+      <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormulariosVentas\frmAdd.cs">
       <SubType>Form</SubType>
@@ -90,11 +102,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormulariosAdmin\frmAdminClientes.resx">
+      <DependentUpon>frmAdminClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmAdminPrincipal.resx">
       <DependentUpon>frmAdminPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmAdminVideojuegos.resx">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\frmOrdenes.resx">
+      <DependentUpon>frmOrdenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
