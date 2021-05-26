@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="97616935fe08425c9d6c98c779e6d07c" Name="Diagram1">
+        <EntityTypeShape EntityType="BDProyectoModel.Cart" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Category" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Clients" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Forums" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Orders" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.OrderStatus" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Products" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.Users" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.InVoice" Width="1.5" PointX="9.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDProyectoModel.OtherSites" Width="1.5" PointX="5.25" PointY="9.125" IsExpanded="true" />
+        <AssociationConnector Association="BDProyectoModel.fk_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_login2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_product2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_Category2" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_login" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_order3" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BDProyectoModel.fk_product3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDProyectoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CartId" />
+    </Key>
+    <Property Name="CartId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ProductId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Quantity" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Log_In" Type="char" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Log_In" />
+    </Key>
+    <Property Name="Log_In" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ShipAddress" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Forums">
+    <Key>
+      <PropertyRef Name="ForumId" />
+    </Key>
+    <Property Name="ForumId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="CategoryId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Comments" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyectopoo.dbo.InVoice' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="InVoice">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="InVoiceTotalAmount" />
+    </Key>
+    <Property Name="InvoiceId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="OrderId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="fecha" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="InVoiceTotalAmount" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ProductId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Quantity" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Log_In" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="fecha" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="OrderStatusId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="CartId" Type="char" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="OrderStatusId" />
+    </Key>
+    <Property Name="OrderStatusId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="StatusDescription" Type="varchar" MaxLength="150" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyectopoo.dbo.OtherSites' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="OtherSites">
+    <Key>
+      <PropertyRef Name="RelatedSiteId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="WebsiteLink" />
+    </Key>
+    <Property Name="RelatedSiteId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ProductId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="WebsiteLink" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Price" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="CategoryId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="ProductKey" Type="char" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="char" MaxLength="8" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Apellido" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_Cart">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Category2">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Forums" Type="Self.Forums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Forums">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_login">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Log_In" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Log_In" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_login2">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Log_In" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Log_In" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_order3">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="InVoice" Type="Self.InVoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="InVoice">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_product2">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_product3">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OtherSites" Type="Self.OtherSites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="OtherSites">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Status">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="OrderStatusId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDProyectoModelStoreContainer">
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Forums" EntityType="Self.Forums" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InVoice" EntityType="Self.InVoice" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InVoice].[InvoiceId] AS [InvoiceId], 
+    [InVoice].[OrderId] AS [OrderId], 
+    [InVoice].[fecha] AS [fecha], 
+    [InVoice].[InVoiceTotalAmount] AS [InVoiceTotalAmount]
+    FROM [dbo].[InVoice] AS [InVoice]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="OtherSites" EntityType="Self.OtherSites" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [OtherSites].[RelatedSiteId] AS [RelatedSiteId], 
+    [OtherSites].[ProductId] AS [ProductId], 
+    [OtherSites].[WebsiteLink] AS [WebsiteLink]
+    FROM [dbo].[OtherSites] AS [OtherSites]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_Cart" Association="Self.fk_Cart">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Category" Association="Self.fk_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Category2" Association="Self.fk_Category2">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Forums" EntitySet="Forums" />
+    </AssociationSet>
+    <AssociationSet Name="fk_login" Association="Self.fk_login">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_login2" Association="Self.fk_login2">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_order3" Association="Self.fk_order3">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="InVoice" EntitySet="InVoice" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product" Association="Self.fk_Product">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product2" Association="Self.fk_product2">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product3" Association="Self.fk_product3">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OtherSites" EntitySet="OtherSites" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Status" Association="Self.fk_Status">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

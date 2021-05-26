@@ -24,3 +24,11 @@ C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGa
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosVentas.frmAdd.resources
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosVentas.frmCarrito.resources
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosVentas.frmFactura.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\bin\Debug\EntityFramework.dll
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\bin\Debug\EntityFramework.xml
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmAdminClientes.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmAdminPrincipal.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmOrdenes.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.csproj.CopyComplete

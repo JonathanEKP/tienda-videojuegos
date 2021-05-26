@@ -43,18 +43,22 @@ namespace VideoGamesStore
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.Location = new System.Drawing.Point(183, 296);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(131, 33);
             this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Iniciar sesión";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.Location = new System.Drawing.Point(253, 400);
-            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(113, 25);
             this.btnRegistrar.TabIndex = 1;
@@ -98,7 +102,7 @@ namespace VideoGamesStore
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(253, 96);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(199, 22);
             this.textBox1.TabIndex = 5;
@@ -106,16 +110,18 @@ namespace VideoGamesStore
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(253, 178);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(199, 22);
             this.textBox2.TabIndex = 6;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(253, 250);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(199, 22);
             this.textBox3.TabIndex = 7;
             // 
@@ -133,9 +139,10 @@ namespace VideoGamesStore
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(202, 26);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(192, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 16);
+            this.label5.Size = new System.Drawing.Size(135, 24);
             this.label5.TabIndex = 9;
             this.label5.Text = "BIENVENIDO";
             // 
@@ -155,7 +162,7 @@ namespace VideoGamesStore
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnLogin);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "LOGIN";
             this.ResumeLayout(false);

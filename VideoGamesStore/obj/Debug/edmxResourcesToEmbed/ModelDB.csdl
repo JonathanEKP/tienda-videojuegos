@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDProyectoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="CartId" />
+    </Key>
+    <Property Name="CartId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Log_In" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_Cart" FromRole="Cart" ToRole="Orders" />
+    <NavigationProperty Name="Clients" Relationship="Self.fk_login2" FromRole="Cart" ToRole="Clients" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_product2" FromRole="Cart" ToRole="Products" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_Category" FromRole="Category" ToRole="Products" />
+    <NavigationProperty Name="Forums" Relationship="Self.fk_Category2" FromRole="Category" ToRole="Forums" />
+  </EntityType>
+  <EntityType Name="Clients">
+    <Key>
+      <PropertyRef Name="Log_In" />
+    </Key>
+    <Property Name="Log_In" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShipAddress" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cart" Relationship="Self.fk_login2" FromRole="Clients" ToRole="Cart" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_login" FromRole="Clients" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Forums">
+    <Key>
+      <PropertyRef Name="ForumId" />
+    </Key>
+    <Property Name="ForumId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CategoryId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.fk_Category2" FromRole="Forums" ToRole="Category" />
+  </EntityType>
+  <EntityType Name="Orders">
+    <Key>
+      <PropertyRef Name="OrderId" />
+    </Key>
+    <Property Name="OrderId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Log_In" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrderStatusId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CartId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cart" Relationship="Self.fk_Cart" FromRole="Orders" ToRole="Cart" />
+    <NavigationProperty Name="Clients" Relationship="Self.fk_login" FromRole="Orders" ToRole="Clients" />
+    <NavigationProperty Name="InVoice" Relationship="Self.fk_order3" FromRole="Orders" ToRole="InVoice" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_Product" FromRole="Orders" ToRole="Products" />
+    <NavigationProperty Name="OrderStatus" Relationship="Self.fk_Status" FromRole="Orders" ToRole="OrderStatus" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="OrderStatusId" />
+    </Key>
+    <Property Name="OrderStatusId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="StatusDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_Status" FromRole="OrderStatus" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Price" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="CategoryId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProductKey" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Cart" Relationship="Self.fk_product2" FromRole="Products" ToRole="Cart" />
+    <NavigationProperty Name="Category" Relationship="Self.fk_Category" FromRole="Products" ToRole="Category" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_Product" FromRole="Products" ToRole="Orders" />
+    <NavigationProperty Name="OtherSites" Relationship="Self.fk_product3" FromRole="Products" ToRole="OtherSites" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Apellido" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InVoice">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+      <PropertyRef Name="OrderId" />
+      <PropertyRef Name="fecha" />
+      <PropertyRef Name="InVoiceTotalAmount" />
+    </Key>
+    <Property Name="InvoiceId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="OrderId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="fecha" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="InVoiceTotalAmount" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_order3" FromRole="InVoice" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="OtherSites">
+    <Key>
+      <PropertyRef Name="RelatedSiteId" />
+      <PropertyRef Name="ProductId" />
+      <PropertyRef Name="WebsiteLink" />
+    </Key>
+    <Property Name="RelatedSiteId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ProductId" Type="String" MaxLength="8" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="WebsiteLink" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.fk_product3" FromRole="OtherSites" ToRole="Products" />
+  </EntityType>
+  <Association Name="fk_Cart">
+    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cart">
+        <PropertyRef Name="CartId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CartId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_login2">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Log_In" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Log_In" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_product2">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Category2">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Forums" Type="Self.Forums" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="Forums">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_login">
+    <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clients">
+        <PropertyRef Name="Log_In" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="Log_In" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_order3">
+    <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+    <End Role="InVoice" Type="Self.InVoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="OrderId" />
+      </Principal>
+      <Dependent Role="InVoice">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Product">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Status">
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderStatus">
+        <PropertyRef Name="OrderStatusId" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="OrderStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_product3">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="OtherSites" Type="Self.OtherSites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="ProductId" />
+      </Principal>
+      <Dependent Role="OtherSites">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBProyectoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cart" EntityType="Self.Cart" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Clients" EntityType="Self.Clients" />
+    <EntitySet Name="Forums" EntityType="Self.Forums" />
+    <EntitySet Name="Orders" EntityType="Self.Orders" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Users" EntityType="Self.Users" />
+    <EntitySet Name="InVoice" EntityType="Self.InVoice" />
+    <EntitySet Name="OtherSites" EntityType="Self.OtherSites" />
+    <AssociationSet Name="fk_Cart" Association="Self.fk_Cart">
+      <End Role="Cart" EntitySet="Cart" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_login2" Association="Self.fk_login2">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product2" Association="Self.fk_product2">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Category" Association="Self.fk_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Category2" Association="Self.fk_Category2">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Forums" EntitySet="Forums" />
+    </AssociationSet>
+    <AssociationSet Name="fk_login" Association="Self.fk_login">
+      <End Role="Clients" EntitySet="Clients" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_order3" Association="Self.fk_order3">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="InVoice" EntitySet="InVoice" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Product" Association="Self.fk_Product">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Status" Association="Self.fk_Status">
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_product3" Association="Self.fk_product3">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="OtherSites" EntitySet="OtherSites" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
