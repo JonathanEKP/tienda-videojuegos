@@ -14,9 +14,9 @@ namespace VideoGamesStore
     
     public partial class OtherSites
     {
-        public string RelatedSiteId { get; set; }
-        public string ProductId { get; set; }
-        public string WebsiteLink { get; set; }
+        public int OtherSitesId { get; set; }
+        public int ProductId { get; set; }
+        public string Webpagelink { get; set; }
     
         public virtual Products Products { get; set; }
     }

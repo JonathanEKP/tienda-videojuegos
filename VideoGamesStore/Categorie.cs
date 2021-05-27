@@ -12,22 +12,21 @@ namespace VideoGamesStore
     using System;
     using System.Collections.Generic;
     
-    public partial class Cart
+    public partial class Categorie
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cart()
+        public Categorie()
         {
-            this.Orders = new HashSet<Orders>();
+            this.Forum = new HashSet<Forum>();
+            this.Products = new HashSet<Products>();
         }
     
-        public int CartId { get; set; }
-        public int ProductId { get; set; }
-        public int Quiantity { get; set; }
-        public int Login_id { get; set; }
+        public int CategoryId { get; set; }
+        public string Description { get; set; }
     
-        public virtual Clients Clients { get; set; }
-        public virtual Products Products { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<Forum> Forum { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

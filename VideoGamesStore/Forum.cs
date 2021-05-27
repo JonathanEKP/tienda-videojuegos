@@ -12,18 +12,13 @@ namespace VideoGamesStore
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderStatus
+    public partial class Forum
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OrderStatus()
-        {
-            this.Orders = new HashSet<Orders>();
-        }
+        public int ForumId { get; set; }
+        public int CategoryId { get; set; }
+        public string Description { get; set; }
+        public string Comments { get; set; }
     
-        public string OrderStatusId { get; set; }
-        public string StatusDescription { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual Categorie Categorie { get; set; }
     }
 }

@@ -10,15 +10,10 @@
 namespace VideoGamesStore
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Invoice
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int InvoiceId { get; set; }
-        public int OrderId { get; set; }
-        public System.DateTime Date { get; set; }
-        public double InvoiceTotalAmount { get; set; }
-    
-        public virtual Orders Orders { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

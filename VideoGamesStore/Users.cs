@@ -14,9 +14,9 @@ namespace VideoGamesStore
     
     public partial class Users
     {
-        public string UserId { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string pass { get; set; }
+        public int UserId { get; set; }
+        public string Password { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
     }
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3a93eb851ba7421ca8410fc599b35749" Name="Diagram1">
+        <EntityTypeShape EntityType="ProyectopooModel.Cart" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Categorie" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Clients" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Forum" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Invoice" Width="1.5" PointX="9.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Orders" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.OrderStatuses" Width="1.5" PointX="5.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.OtherSites" Width="1.5" PointX="5.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Products" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectopooModel.Users" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="ProyectopooModel.FK_Cart_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Cart_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Orders_Cart" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Forum_Categorie" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Products_Categorie" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Invoice_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_Orders_OrderStatuses" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectopooModel.FK_OtherSites_Products" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -32,3 +32,4 @@ C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGa
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmAdminPrincipal.resources
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmOrdenes.resources
 C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.csproj.CopyComplete
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.frmRegistro.resources

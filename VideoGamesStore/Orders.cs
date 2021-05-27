@@ -17,22 +17,20 @@ namespace VideoGamesStore
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Orders()
         {
-            this.InVoice = new HashSet<InVoice>();
+            this.Invoice = new HashSet<Invoice>();
         }
     
-        public string OrderId { get; set; }
-        public string ProductId { get; set; }
-        public string Quantity { get; set; }
-        public string Log_In { get; set; }
-        public string fecha { get; set; }
-        public string OrderStatusId { get; set; }
-        public string CartId { get; set; }
+        public int OrderId { get; set; }
+        public int ProductId { get; set; }
+        public int Quantity { get; set; }
+        public int LoginId { get; set; }
+        public System.DateTime Date { get; set; }
+        public int OrderStatusID { get; set; }
+        public int CartId { get; set; }
     
         public virtual Cart Cart { get; set; }
-        public virtual Clients Clients { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<InVoice> InVoice { get; set; }
-        public virtual Products Products { get; set; }
-        public virtual OrderStatus OrderStatus { get; set; }
+        public virtual ICollection<Invoice> Invoice { get; set; }
+        public virtual OrderStatuses OrderStatuses { get; set; }
     }
 }

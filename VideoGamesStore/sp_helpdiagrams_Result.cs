@@ -10,15 +10,13 @@
 namespace VideoGamesStore
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Forums
+    public partial class sp_helpdiagrams_Result
     {
-        public string ForumId { get; set; }
-        public string CategoryId { get; set; }
-        public string Descripcion { get; set; }
-        public string Comments { get; set; }
-    
-        public virtual Category Category { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

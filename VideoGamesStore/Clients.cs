@@ -18,19 +18,16 @@ namespace VideoGamesStore
         public Clients()
         {
             this.Cart = new HashSet<Cart>();
-            this.Orders = new HashSet<Orders>();
         }
     
-        public string Log_In { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        public string pass { get; set; }
-        public string ShipAddress { get; set; }
-        public string Email { get; set; }
+        public int Login_id { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string Password { get; set; }
+        public string email { get; set; }
+        public string ShippAdress { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Cart { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
     }
 }
