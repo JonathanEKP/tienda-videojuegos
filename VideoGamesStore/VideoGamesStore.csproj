@@ -86,6 +86,12 @@
     <Compile Include="FormulariosAdmin\frmAdminVideojuegos.Designer.cs">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosAdmin\frmAgregarAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmAgregarAdmin.Designer.cs">
+      <DependentUpon>frmAgregarAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosAdmin\frmOrdenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmAdminVideojuegos.resx">
       <DependentUpon>frmAdminVideojuegos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\frmAgregarAdmin.resx">
+      <DependentUpon>frmAgregarAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
