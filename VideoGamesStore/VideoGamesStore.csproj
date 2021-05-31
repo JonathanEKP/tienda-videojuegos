@@ -68,6 +68,12 @@
     <Compile Include="Clients.cs">
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosAdmin\frmAdminCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmAdminCategorias.Designer.cs">
+      <DependentUpon>frmAdminCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosAdmin\frmAdminClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="FormulariosAdmin\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmOtherSites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmOtherSites.Designer.cs">
+      <DependentUpon>frmOtherSites.cs</DependentUpon>
     </Compile>
     <Compile Include="FormulariosVentas\frmAdd.cs">
       <SubType>Form</SubType>
@@ -181,6 +193,9 @@
     <Compile Include="Users.cs">
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormulariosAdmin\frmAdminCategorias.resx">
+      <DependentUpon>frmAdminCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmAdminClientes.resx">
       <DependentUpon>frmAdminClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\frmOtherSites.resx">
+      <DependentUpon>frmOtherSites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
