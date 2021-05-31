@@ -27,7 +27,7 @@ namespace VideoGamesStore
                    || txtContraseña.Text == String.Empty || txtCorreo.Text == String.Empty
                    || txtDireccion.Text == String.Empty || txtNombre.Text == String.Empty)
             {
-                MessageBox.Show("Debe rellenear todos los campos");
+                MessageBox.Show("Debe rellenear todos los campos","Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             else

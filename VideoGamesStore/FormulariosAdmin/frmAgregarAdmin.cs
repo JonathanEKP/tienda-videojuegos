@@ -16,6 +16,7 @@ namespace VideoGamesStore.FormulariosAdmin
         {
             InitializeComponent();
             cargardatos();
+            deshabilitar();
         }
 
         private void cargardatos()
@@ -59,7 +60,81 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void dgvAdmin_Click(object sender, EventArgs e)
         {
-            llenar();
+            //llenar();
+        }
+
+       
+        private void habilitar()
+        {
+            txtPass.Enabled = true;
+            txtName.Enabled = true;
+            txtConfirmar.Enabled = true;
+            txtApellido.Enabled = true;
+        }
+        private void deshabilitar()
+        {
+            txtName.Enabled = false;
+            txtApellido.Enabled = false;
+            txtConfirmar.Enabled = false;
+            txtPass.Enabled = false;
+
+        }
+
+        private void limpiar()
+        {
+            txtApellido.Clear();
+            txtConfirmar.Clear();
+            txtName.Clear();
+            txtPass.Clear();
+        }
+        
+       
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdminPrincipal frm = new frmAdminPrincipal();
+            frm.FormClosed += (s, args) => this.Close();
+            frm.Show();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            
+            limpiar();
+            habilitar();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(txtApellido.Text==String.Empty || txtConfirmar.Text==String.Empty || txtName.Text==String.Empty || txtPass.Text==String.Empty)
+            {
+                MessageBox.Show("Debe rellenear todos los campos", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                using (ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Users oUsers = new Users();
+                    oUsers.Name = txtName.Text;
+                    oUsers.LastName = txtApellido.Text;
+                    if (txtPass.Text == txtConfirmar.Text)
+                    {
+                        string sPass = Clases.Encrypt.GetSHA256(txtPass.Text.Trim());
+                        oUsers.Password = sPass;
+                        MessageBox.Show("Administrado agregado con exito!", "Agregar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        db.Users.Add(oUsers);
+                        db.SaveChanges();
+                        limpiar();
+                        
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Las contraseñas deben coincidir", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
     }
 }
