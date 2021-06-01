@@ -54,14 +54,21 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (ProyectopooEntities db = new ProyectopooEntities())
+            if (txtNombreCat.Text == String.Empty)
             {
-                Categorie op = new Categorie();
-                op.Description = txtNombreCat.Text;
+                MessageBox.Show("Debe agregar un nombre a la categoria", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                using (ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Categorie op = new Categorie();
+                    op.Description = txtNombreCat.Text;
 
-                db.Categorie.Add(op);
-                db.SaveChanges();
-                cargardatos();
+                    db.Categorie.Add(op);
+                    db.SaveChanges();
+                    cargardatos();
+                }
             }
         }
 
@@ -80,15 +87,23 @@ namespace VideoGamesStore.FormulariosAdmin
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int id1 = Convert.ToInt16(this.txtID.Text);
-            string categoria = txtNombreCat.Text;
-
-            using(ProyectopooEntities db = new ProyectopooEntities())
+            if (txtID.Text==String.Empty)
             {
-                Categorie c = db.Categorie.FirstOrDefault(x => x.CategoryId == id1);
-                c.Description = categoria;
-                db.SaveChanges();
-                cargardatos();
+                MessageBox.Show("Debe seleccionar un registro para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int id1 = Convert.ToInt16(this.txtID.Text);
+                string categoria = txtNombreCat.Text;
+
+                using (ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Categorie c = db.Categorie.FirstOrDefault(x => x.CategoryId == id1);
+                    c.Description = categoria;
+                    db.SaveChanges();
+                    cargardatos();
+                }
+                
             }
         }
 
@@ -100,6 +115,14 @@ namespace VideoGamesStore.FormulariosAdmin
         private void dgvCategorias_Click(object sender, EventArgs e)
         {
             llenar();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdminPrincipal frm = new frmAdminPrincipal();
+            frm.FormClosed += (s, args) => this.Close();
+            frm.Show();
         }
     }
 }

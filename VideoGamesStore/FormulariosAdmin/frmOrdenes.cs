@@ -26,5 +26,14 @@ namespace VideoGamesStore.FormulariosAdmin
         {
 
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdminPrincipal frm = new frmAdminPrincipal();
+            frm.FormClosed += (s, args) => this.Close();
+            frm.Show();
+
+        }
     }
 }

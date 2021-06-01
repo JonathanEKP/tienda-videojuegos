@@ -61,3 +61,5 @@ C:\Users\edgar\Source\Repos\tienda-videojuegos3\VideoGamesStore\obj\Debug\VideoG
 C:\Users\edgar\Source\Repos\tienda-videojuegos3\VideoGamesStore\obj\Debug\VideoGamesStore.exe
 C:\Users\edgar\Source\Repos\tienda-videojuegos3\VideoGamesStore\obj\Debug\VideoGamesStore.pdb
 C:\Users\edgar\Source\Repos\tienda-videojuegos3\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmOtherSites.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmAdminCategorias.resources
+C:\Users\jonat\source\repos\tienda-videojuegos\VideoGamesStore\obj\Debug\VideoGamesStore.FormulariosAdmin.frmOtherSites.resources
