@@ -64,7 +64,9 @@
     <Compile Include="Categorie.cs">
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>
+    <Compile Include="Clases\CategoryViewModel.cs" />
     <Compile Include="Clases\Encrypt.cs" />
+    <Compile Include="Clases\ProductViewModel.cs" />
     <Compile Include="Clients.cs">
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>

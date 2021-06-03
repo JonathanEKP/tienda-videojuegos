@@ -55,7 +55,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.btnVideojuegos.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVideojuegos.Location = new System.Drawing.Point(9, 256);
-            this.btnVideojuegos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVideojuegos.Margin = new System.Windows.Forms.Padding(2);
             this.btnVideojuegos.Name = "btnVideojuegos";
             this.btnVideojuegos.Size = new System.Drawing.Size(145, 48);
             this.btnVideojuegos.TabIndex = 0;
@@ -78,7 +78,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.btnClientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClientes.Location = new System.Drawing.Point(190, 256);
-            this.btnClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClientes.Margin = new System.Windows.Forms.Padding(2);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(145, 48);
             this.btnClientes.TabIndex = 2;
@@ -90,11 +90,11 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.btnOrdenes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrdenes.Location = new System.Drawing.Point(369, 256);
-            this.btnOrdenes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOrdenes.Margin = new System.Windows.Forms.Padding(2);
             this.btnOrdenes.Name = "btnOrdenes";
             this.btnOrdenes.Size = new System.Drawing.Size(145, 48);
             this.btnOrdenes.TabIndex = 4;
-            this.btnOrdenes.Text = "Ordenes";
+            this.btnOrdenes.Text = "Estados de orden";
             this.btnOrdenes.UseVisualStyleBackColor = true;
             this.btnOrdenes.Click += new System.EventHandler(this.btnOrdenes_Click);
             // 
@@ -102,7 +102,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 109);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(145, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -113,7 +113,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(190, 109);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(145, 142);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(369, 109);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(145, 142);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -135,7 +135,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.btnCategoria.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.Location = new System.Drawing.Point(544, 256);
-            this.btnCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.btnCategoria.Name = "btnCategoria";
             this.btnCategoria.Size = new System.Drawing.Size(145, 48);
             this.btnCategoria.TabIndex = 9;
@@ -147,7 +147,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(544, 109);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(145, 142);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,7 +158,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.btnOtherSites.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOtherSites.Location = new System.Drawing.Point(719, 256);
-            this.btnOtherSites.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOtherSites.Margin = new System.Windows.Forms.Padding(2);
             this.btnOtherSites.Name = "btnOtherSites";
             this.btnOtherSites.Size = new System.Drawing.Size(145, 48);
             this.btnOtherSites.TabIndex = 11;
@@ -170,7 +170,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(719, 109);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(145, 142);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -219,7 +219,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.Controls.Add(this.btnClientes);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnVideojuegos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmAdminPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

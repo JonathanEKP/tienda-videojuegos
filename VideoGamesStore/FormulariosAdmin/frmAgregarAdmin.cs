@@ -43,7 +43,7 @@ namespace VideoGamesStore.FormulariosAdmin
             }
         }
 
-        private void llenar()
+        /*private void llenar()
         {
             if (dgvAdmin.RowCount > 0)
             {
@@ -51,7 +51,7 @@ namespace VideoGamesStore.FormulariosAdmin
                 txtApellido.Text = dgvAdmin.Rows[dgvAdmin.CurrentRow.Index].Cells[3].Value.ToString();
                 txtPass.Text = dgvAdmin.Rows[dgvAdmin.CurrentRow.Index].Cells[1].Value.ToString();
             }
-        }
+        }*/
 
         private void dgvAdmin_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -126,6 +126,7 @@ namespace VideoGamesStore.FormulariosAdmin
                         db.Users.Add(oUsers);
                         db.SaveChanges();
                         limpiar();
+                        cargardatos();
                         
 
                     }

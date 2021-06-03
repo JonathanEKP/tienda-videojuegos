@@ -87,6 +87,7 @@ namespace VideoGamesStore.FormulariosAdmin
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            
             if (txtID.Text==String.Empty)
             {
                 MessageBox.Show("Debe seleccionar un registro para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
