@@ -19,10 +19,18 @@ namespace VideoGamesStore.FormulariosAdmin
             InitializeComponent();
             cargarDB();
             bloquear();
+
             
         }
         private void cargarDB()
         {
+            dgvClientes.DataSource = db.Clients.Where(x => x.Login_id == 1).ToList();
+            dgvClientes.Columns[0].HeaderText = "ID Login";
+            dgvClientes.Columns[1].HeaderText = "Nombre";
+            dgvClientes.Columns[2].HeaderText = "Apellido";
+            dgvClientes.Columns[3].HeaderText = "Contraseña";
+            dgvClientes.Columns[4].HeaderText = "Email";
+            dgvClientes.Columns[5].HeaderText = "Direccion";
             try
             {
                 using (ProyectopooEntities model = new ProyectopooEntities())
@@ -53,6 +61,9 @@ namespace VideoGamesStore.FormulariosAdmin
             txtContraseña.Enabled = false;
             txtEmail.Enabled = false;
             txtDireccion.Enabled = false;
+            btmAceptar.Enabled = false;
+            btnCancelar.Enabled = false;
+            btnEditar.Enabled = false;
         }
         private void des()
         {
@@ -61,6 +72,9 @@ namespace VideoGamesStore.FormulariosAdmin
             txtContraseña.Enabled = true;
             txtEmail.Enabled = true;
             txtDireccion.Enabled = true;
+            btmAceptar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnCancelar.Enabled = true;
         }
         private void filtrar( string nombre, string criterio = "Name")
         {
@@ -71,11 +85,11 @@ namespace VideoGamesStore.FormulariosAdmin
         }
         private void limpiar()
         {
-            txtNombre.Text = " ";
-            txtApellido.Text = " ";
-            txtContraseña.Text = " ";
-            txtEmail.Text = " ";
-            txtDireccion.Text = " ";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtContraseña.Text = "";
+            txtEmail.Text = "";
+            txtDireccion.Text = "";
         }
         private void llenar()
         {
@@ -105,27 +119,48 @@ namespace VideoGamesStore.FormulariosAdmin
         {
             llenar();
             des();
+            btmAceptar.Enabled = false;
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            op = new Clients();
+            if(txtID.Text.Equals("")|| txtNombre.Text.Equals("") || txtApellido.Text.Equals("") || txtContraseña.Text.Equals("") || txtEmail.Text.Equals("")||txtDireccion.Text.Equals("")){
+                MessageBox.Show("Debe rellenar todos los campos!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                int id = int.Parse(txtID.Text);
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string pass = txtContraseña.Text;
+                string email = txtEmail.Text;
+                string dir = txtDireccion.Text;
 
-            op.Name = txtNombre.Text;
-            op.LastName = txtApellido.Text;
-            op.Password = txtContraseña.Text;
-            op.email = txtEmail.Text;
-            op.ShippAdress = txtDireccion.Text;
-
-            db.Clients.Add(op);
-            db.SaveChanges();
+                using (ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Clients p = db.Clients.FirstOrDefault(x => x.Login_id == id);
+                    p.Name = nombre;
+                    p.LastName = apellido;
+                    p.Password = pass;
+                    p.email = email;
+                    p.ShippAdress = dir;
+                    db.SaveChanges();
+                }
+            }
             cargarDB();
+            bloquear();
             limpiar();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             des();
+            ocultar();
+            limpiar();
+            btnEditar.Enabled = false;
+            btnBuscar.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -135,8 +170,47 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void btmAceptar_Click(object sender, EventArgs e)
         {
+            if (txtNombre.Text.Equals(""))
+            {
+                MessageBox.Show("Debe rellenar todos los campos!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             filtrar(txtNombre.Text);
             bloquear();
+            btnCancelar.Enabled = true;
+        }
+        private void ocultar()
+        {
+            txtApellido.Visible = false;
+            txtContraseña.Visible = false;
+            txtDireccion.Visible = false;
+            txtEmail.Visible = false;
+            txtID.Visible = false;
+            lblApellido.Visible = false;
+            lblContraseña.Visible = false;
+            lblDir.Visible = false;
+            lblEmail.Visible = false;
+        }
+        private void desOcultar()
+        {
+            txtApellido.Visible = true;
+            txtContraseña.Visible = true;
+            txtDireccion.Visible = true;
+            txtEmail.Visible = true;
+            txtID.Visible = true;
+            lblApellido.Visible = true;
+            lblContraseña.Visible = true;
+            lblDir.Visible = true;
+            lblEmail.Visible = true;
+            txtID.Visible = false;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cargarDB();
+            limpiar();
+            bloquear();
+            desOcultar();
         }
     }
 }

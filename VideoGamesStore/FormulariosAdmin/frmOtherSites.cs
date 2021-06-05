@@ -16,11 +16,13 @@ namespace VideoGamesStore.FormulariosAdmin
         OtherSites op;
         public frmOtherSites()
         {
-            ProyectopooEntities db = new ProyectopooEntities();
+           
             InitializeComponent();
             cargardatos();
             combo();
+            bloquear();
         }
+
         private void cargardatos()
         {
             try
@@ -47,6 +49,28 @@ namespace VideoGamesStore.FormulariosAdmin
             }
              
         }
+
+        private void bloquear()
+        {
+            txtUrl.Enabled = false;
+            cmbProducto.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+        }
+
+        private void des()
+        {
+            txtUrl.Enabled = true;
+            cmbProducto.Enabled = true;
+            btnGuardar.Enabled = true;
+        }
+
+        private void limpiar()
+        {
+            txtUrl.Text = "";
+            cmbProducto.Text = "";
+        }
+
         private void llenar()
         {
             this.txtOS.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
@@ -63,6 +87,7 @@ namespace VideoGamesStore.FormulariosAdmin
             }
 
         }
+
         private void combo()
         {
             var lista = db.Products.ToList();
@@ -82,6 +107,11 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if(txtUrl.Text.Equals("") || cmbProducto.Text.Equals(""))
+            {
+                MessageBox.Show("Debe rellenar todos los campos!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             op = new OtherSites();
             op.ProductId = int.Parse(cmbProducto.SelectedValue.ToString());
             op.Webpagelink = txtUrl.Text;
@@ -104,23 +134,11 @@ namespace VideoGamesStore.FormulariosAdmin
             }
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            int id1 = Convert.ToInt16(this.txtOS.Text);
-            string o = txtUrl.Text;
-
-            using (ProyectopooEntities db = new ProyectopooEntities())
-            {
-                OtherSites c = db.OtherSites.FirstOrDefault(x => x.OtherSitesId == id1);
-                c.Webpagelink = o;
-                db.SaveChanges();
-                cargardatos();
-            }
-        }
-
         private void dataGridView1_Click(object sender, EventArgs e)
         {
             llenar();
+            bloquear();
+            btnEliminar.Enabled = true;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -132,9 +150,11 @@ namespace VideoGamesStore.FormulariosAdmin
             
         }
 
-        private void cmbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
         {
-           
+            des();
+            limpiar();
+            btnEliminar.Enabled = false;
         }
     }
 }

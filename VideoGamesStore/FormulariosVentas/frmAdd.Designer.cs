@@ -67,6 +67,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnPagar.TabIndex = 1;
             this.btnPagar.Text = "Pagar ahora";
             this.btnPagar.UseVisualStyleBackColor = false;
+            this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
             // 
             // txtCant
             // 
@@ -75,7 +76,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.txtCant.Location = new System.Drawing.Point(300, 36);
             this.txtCant.Name = "txtCant";
             this.txtCant.ReadOnly = true;
-            this.txtCant.Size = new System.Drawing.Size(23, 20);
+            this.txtCant.Size = new System.Drawing.Size(23, 23);
             this.txtCant.TabIndex = 2;
             this.txtCant.Text = "1";
             this.txtCant.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -86,7 +87,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(236, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Cantidad";
             // 
@@ -96,7 +97,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(245, 71);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(37, 13);
+            this.label2.Size = new System.Drawing.Size(48, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Precio";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -108,7 +109,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.txtPrecio.Location = new System.Drawing.Point(300, 71);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.ReadOnly = true;
-            this.txtPrecio.Size = new System.Drawing.Size(23, 13);
+            this.txtPrecio.Size = new System.Drawing.Size(23, 16);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.Text = "1";
             this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -119,7 +120,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(235, 109);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(65, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "SubTotal";
             // 
@@ -130,7 +131,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.textBox1.Location = new System.Drawing.Point(300, 109);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(23, 13);
+            this.textBox1.Size = new System.Drawing.Size(23, 16);
             this.textBox1.TabIndex = 7;
             this.textBox1.Text = "1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -140,7 +141,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(40, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 13);
+            this.label4.Size = new System.Drawing.Size(160, 17);
             this.label4.TabIndex = 8;
             this.label4.Text = "Nombre del producto";
             // 
@@ -149,13 +150,13 @@ namespace VideoGamesStore.FormulariosVentas
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(40, 98);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 13);
+            this.label5.Size = new System.Drawing.Size(189, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Descripcion del producto";
             // 
             // frmAdd
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(391, 201);

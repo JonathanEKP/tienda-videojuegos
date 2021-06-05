@@ -37,6 +37,8 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnSalir = new System.Windows.Forms.Button();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.txtOS = new System.Windows.Forms.TextBox();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +46,7 @@ namespace VideoGamesStore.FormulariosAdmin
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView1.Location = new System.Drawing.Point(12, 162);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.MultiSelect = false;
@@ -113,7 +116,6 @@ namespace VideoGamesStore.FormulariosAdmin
             this.cmbProducto.Name = "cmbProducto";
             this.cmbProducto.Size = new System.Drawing.Size(266, 24);
             this.cmbProducto.TabIndex = 15;
-            this.cmbProducto.SelectedIndexChanged += new System.EventHandler(this.cmbProducto_SelectedIndexChanged);
             // 
             // txtOS
             // 
@@ -123,11 +125,35 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtOS.Size = new System.Drawing.Size(55, 22);
             this.txtOS.TabIndex = 16;
             // 
+            // btnNuevo
+            // 
+            this.btnNuevo.Location = new System.Drawing.Point(226, 127);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(99, 31);
+            this.btnNuevo.TabIndex = 17;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 74);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Juego";
+            // 
             // frmOtherSites
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.txtOS);
             this.Controls.Add(this.cmbProducto);
             this.Controls.Add(this.btnSalir);
@@ -155,5 +181,7 @@ namespace VideoGamesStore.FormulariosAdmin
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cmbProducto;
         private System.Windows.Forms.TextBox txtOS;
+        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label label1;
     }
 }

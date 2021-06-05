@@ -39,14 +39,15 @@ namespace VideoGamesStore.FormulariosAdmin
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblApellido = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblDir = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.btmAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -145,15 +146,15 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtApellido.Size = new System.Drawing.Size(193, 22);
             this.txtApellido.TabIndex = 10;
             // 
-            // label2
+            // lblEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(229, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 23);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Email:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(229, 60);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(69, 23);
+            this.lblEmail.TabIndex = 11;
+            this.lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
@@ -182,20 +183,20 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtDireccion.Size = new System.Drawing.Size(193, 22);
             this.txtDireccion.TabIndex = 14;
             // 
-            // label1
+            // lblDir
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(445, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 23);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Direccion de envio:";
+            this.lblDir.AutoSize = true;
+            this.lblDir.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDir.Location = new System.Drawing.Point(445, 60);
+            this.lblDir.Name = "lblDir";
+            this.lblDir.Size = new System.Drawing.Size(197, 23);
+            this.lblDir.TabIndex = 15;
+            this.lblDir.Text = "Direccion de envio:";
             // 
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(489, 117);
+            this.btnSalir.Location = new System.Drawing.Point(648, 117);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(208, 39);
@@ -224,20 +225,33 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btmAceptar.UseVisualStyleBackColor = true;
             this.btmAceptar.Click += new System.EventHandler(this.btmAceptar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Location = new System.Drawing.Point(489, 117);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(153, 39);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAdminClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1235, 538);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btmAceptar);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblDir);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.lblApellido);
             this.Controls.Add(this.lblContraseña);
@@ -268,13 +282,14 @@ namespace VideoGamesStore.FormulariosAdmin
         private System.Windows.Forms.Label lblContraseña;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblDir;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btmAceptar;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

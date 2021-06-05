@@ -12,11 +12,13 @@ namespace VideoGamesStore.FormulariosAdmin
 {
     public partial class frmAdminCategorias : Form
     {
+        ProyectopooEntities db = new ProyectopooEntities();
         public int? id;
         public frmAdminCategorias()
         {
             InitializeComponent();
             cargardatos();
+            bloquear();
             
         }
 
@@ -36,15 +38,16 @@ namespace VideoGamesStore.FormulariosAdmin
 
                     }
                 }
-
-
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex.Message);
             }
             txtID.Visible = false;
+            //dgvCategorias.DataSource = db.Categorie.Where(x => x.CategoryId == 1).ToList();
+            dgvCategorias.Columns[0].HeaderText = "ID";
+            dgvCategorias.Columns[1].HeaderText = "Categoria";
+            txtNombreCat.Text = "";
         }
         private void llenar()
         {
@@ -108,14 +111,21 @@ namespace VideoGamesStore.FormulariosAdmin
             }
         }
 
-        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void bloquear()
         {
-
+            txtNombreCat.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnGuardar.Enabled = false;
+            button1.Enabled = false;
         }
 
         private void dgvCategorias_Click(object sender, EventArgs e)
         {
             llenar();
+            bloquear();
+            txtNombreCat.Enabled = true;
+            btnEliminar.Enabled = true;
+            button1.Enabled = true;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -124,6 +134,14 @@ namespace VideoGamesStore.FormulariosAdmin
             frmAdminPrincipal frm = new frmAdminPrincipal();
             frm.FormClosed += (s, args) => this.Close();
             frm.Show();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            cargardatos();
+            bloquear();
+            txtNombreCat.Enabled = true;
+            btnGuardar.Enabled = true;
         }
     }
 }

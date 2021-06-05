@@ -12,6 +12,7 @@ namespace VideoGamesStore.FormulariosVentas
 {
     public partial class frmAdd : Form
     {
+        ProyectopooEntities db = new ProyectopooEntities();
         public frmAdd()
         {
             InitializeComponent();
@@ -35,9 +36,17 @@ namespace VideoGamesStore.FormulariosVentas
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
+            frmMain main = new frmMain();
+            main.Show();
         }
 
-        
+        private void btnPagar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmFactura fac = new frmFactura();
+            fac.Show();
+            
+        }
     }
 }
