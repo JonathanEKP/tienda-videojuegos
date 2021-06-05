@@ -16,6 +16,7 @@ namespace VideoGamesStore.FormulariosVentas
         public frmAdd()
         {
             InitializeComponent();
+            bloquear();
         }
 
         
@@ -24,14 +25,11 @@ namespace VideoGamesStore.FormulariosVentas
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void bloquear()
         {
-
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
+            txtNombre.Enabled = false;
+            txtPrecio.Enabled = false;
+            txtSubTotal.Enabled = false;
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
@@ -47,6 +45,22 @@ namespace VideoGamesStore.FormulariosVentas
             frmFactura fac = new frmFactura();
             fac.Show();
             
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        { 
+            var a = from c in db.Clients
+                    where c.email == txtIdLogin.Text
+                    select c;
+            if(a.Count() > 0)
+            {
+                
+            }
+
+            Cart añadir = new Cart();
+            añadir.Quiantity = int.Parse(txtCant.Text);
+            añadir.ProductId = int.Parse(txtNombre.Text);
+            añadir.Login_id = int.Parse(txtIdLogin.Text);
         }
     }
 }
