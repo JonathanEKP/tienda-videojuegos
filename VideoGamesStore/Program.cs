@@ -16,7 +16,7 @@ namespace VideoGamesStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormulariosVentas.frmAdd());
+            Application.Run(new FormulariosVentas.frmCarrito());
         }
     }
 }

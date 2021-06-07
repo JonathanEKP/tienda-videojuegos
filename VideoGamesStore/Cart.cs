@@ -14,20 +14,12 @@ namespace VideoGamesStore
     
     public partial class Cart
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Cart()
-        {
-            this.Orders = new HashSet<Orders>();
-        }
-    
         public int CartId { get; set; }
         public int ProductId { get; set; }
-        public int Quiantity { get; set; }
+        public int Quantity { get; set; }
         public int Login_id { get; set; }
     
         public virtual Clients Clients { get; set; }
         public virtual Products Products { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

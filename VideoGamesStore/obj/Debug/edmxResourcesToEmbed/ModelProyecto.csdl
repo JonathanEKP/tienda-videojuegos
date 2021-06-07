@@ -6,11 +6,10 @@
     </Key>
     <Property Name="CartId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
-    <Property Name="Quiantity" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
     <Property Name="Login_id" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Clients" Relationship="Self.FK_Cart_Clients" FromRole="Cart" ToRole="Clients" />
     <NavigationProperty Name="Products" Relationship="Self.FK_Cart_Products" FromRole="Cart" ToRole="Products" />
-    <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Cart" FromRole="Cart" ToRole="Orders" />
   </EntityType>
   <EntityType Name="Categorie">
     <Key>
@@ -30,7 +29,7 @@
     <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ShippAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ShippAdress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Cart" Relationship="Self.FK_Cart_Clients" FromRole="Clients" ToRole="Cart" />
   </EntityType>
   <EntityType Name="Forum">
@@ -40,7 +39,7 @@
     <Property Name="ForumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CategoryId" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Comments" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Categorie" Relationship="Self.FK_Forum_Categorie" FromRole="Forum" ToRole="Categorie" />
   </EntityType>
   <EntityType Name="Invoice">
@@ -58,13 +57,10 @@
       <PropertyRef Name="OrderId" />
     </Key>
     <Property Name="OrderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Quantity" Type="Int32" Nullable="false" />
-    <Property Name="LoginId" Type="Int32" Nullable="false" />
     <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
     <Property Name="CartId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Cart" Relationship="Self.FK_Orders_Cart" FromRole="Orders" ToRole="Cart" />
     <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Orders" FromRole="Orders" ToRole="Invoice" />
     <NavigationProperty Name="OrderStatuses" Relationship="Self.FK_Orders_OrderStatuses" FromRole="Orders" ToRole="OrderStatuses" />
   </EntityType>
@@ -73,14 +69,14 @@
       <PropertyRef Name="OrderStatusId" />
     </Key>
     <Property Name="OrderStatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_OrderStatuses" FromRole="OrderStatuses" ToRole="Orders" />
   </EntityType>
   <EntityType Name="OtherSites">
     <Key>
       <PropertyRef Name="OtherSitesId" />
     </Key>
-    <Property Name="OtherSitesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OtherSitesId" Type="Int32" Nullable="false" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Webpagelink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK_OtherSites_Products" FromRole="OtherSites" ToRole="Products" />
@@ -98,16 +94,6 @@
     <NavigationProperty Name="Cart" Relationship="Self.FK_Cart_Products" FromRole="Products" ToRole="Cart" />
     <NavigationProperty Name="Categorie" Relationship="Self.FK_Products_Categorie" FromRole="Products" ToRole="Categorie" />
     <NavigationProperty Name="OtherSites" Relationship="Self.FK_OtherSites_Products" FromRole="Products" ToRole="OtherSites" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -139,18 +125,6 @@
       </Principal>
       <Dependent Role="Cart">
         <PropertyRef Name="ProductId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Orders_Cart">
-    <End Role="Cart" Type="Self.Cart" Multiplicity="1" />
-    <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cart">
-        <PropertyRef Name="CartId" />
-      </Principal>
-      <Dependent Role="Orders">
-        <PropertyRef Name="CartId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -224,7 +198,6 @@
     <EntitySet Name="OrderStatuses" EntityType="Self.OrderStatuses" />
     <EntitySet Name="OtherSites" EntityType="Self.OtherSites" />
     <EntitySet Name="Products" EntityType="Self.Products" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Users" EntityType="Self.Users" />
     <AssociationSet Name="FK_Cart_Clients" Association="Self.FK_Cart_Clients">
       <End Role="Clients" EntitySet="Clients" />
@@ -233,10 +206,6 @@
     <AssociationSet Name="FK_Cart_Products" Association="Self.FK_Cart_Products">
       <End Role="Products" EntitySet="Products" />
       <End Role="Cart" EntitySet="Cart" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Orders_Cart" Association="Self.FK_Orders_Cart">
-      <End Role="Cart" EntitySet="Cart" />
-      <End Role="Orders" EntitySet="Orders" />
     </AssociationSet>
     <AssociationSet Name="FK_Forum_Categorie" Association="Self.FK_Forum_Categorie">
       <End Role="Categorie" EntitySet="Categorie" />
@@ -258,46 +227,5 @@
       <End Role="Products" EntitySet="Products" />
       <End Role="OtherSites" EntitySet="OtherSites" />
     </AssociationSet>
-    <FunctionImport Name="sp_alterdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_creatediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="version" Mode="In" Type="Int32" />
-      <Parameter Name="definition" Mode="In" Type="Binary" />
-    </FunctionImport>
-    <FunctionImport Name="sp_dropdiagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(ProyectopooModel.sp_helpdiagramdefinition_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(ProyectopooModel.sp_helpdiagrams_Result)">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-    </FunctionImport>
-    <FunctionImport Name="sp_renamediagram">
-      <Parameter Name="diagramname" Mode="In" Type="String" />
-      <Parameter Name="owner_id" Mode="In" Type="Int32" />
-      <Parameter Name="new_diagramname" Mode="In" Type="String" />
-    </FunctionImport>
-    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <ComplexType Name="sp_helpdiagramdefinition_Result">
-    <Property Type="Int32" Name="version" Nullable="true" />
-    <Property Type="Binary" Name="definition" Nullable="true" />
-  </ComplexType>
-  <ComplexType Name="sp_helpdiagrams_Result">
-    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-    <Property Type="Int32" Name="ID" Nullable="false" />
-    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-    <Property Type="Int32" Name="OwnerID" Nullable="false" />
-  </ComplexType>
 </Schema>

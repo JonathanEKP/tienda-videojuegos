@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VideoGamesStore.Clases;
 
 namespace VideoGamesStore
 {
@@ -15,6 +16,8 @@ namespace VideoGamesStore
         public Login()
         {
             InitializeComponent();
+            
+           
         }
         
         
@@ -23,6 +26,8 @@ namespace VideoGamesStore
         {
 
         }
+
+   
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -41,17 +46,25 @@ namespace VideoGamesStore
                               && d.Password == sPass
                               select d;
 
+
                     var lst2 = from a in db.Users
                                where a.Name == txtCorreo.Text
                                && a.Password == sPass
                                select a;
+
+                   var lg = (from l in db.Clients
+                              where l.email == txtCorreo.Text && l.Password == sPass
+                              select l).ToList();
+                   
+
+                    
                     if (lst.Count() > 0)
                     {
                         this.Hide();
                         FormulariosVentas.frmMain frm = new FormulariosVentas.frmMain();
                         frm.FormClosed += (s, args) => this.Close();
                         frm.Show();
-
+                        
                     }
                     else if (lst2.Count() > 0)
                     {
@@ -69,6 +82,7 @@ namespace VideoGamesStore
 
 
                 }
+               
             }
 
         }

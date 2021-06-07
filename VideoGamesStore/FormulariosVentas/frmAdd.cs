@@ -58,7 +58,7 @@ namespace VideoGamesStore.FormulariosVentas
             }
 
             Cart añadir = new Cart();
-            añadir.Quiantity = int.Parse(txtCant.Text);
+            añadir.Quantity = int.Parse(txtCant.Text);
             añadir.ProductId = int.Parse(txtNombre.Text);
             añadir.Login_id = int.Parse(txtIdLogin.Text);
         }
