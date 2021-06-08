@@ -16,6 +16,7 @@ namespace VideoGamesStore.FormulariosVentas
     {
 
         ProyectopooEntities db1 = new ProyectopooEntities();
+        Sesion se = new Sesion();
         int cant = 0;
         private int log_id;
 
@@ -119,7 +120,7 @@ namespace VideoGamesStore.FormulariosVentas
         private void btnCarro_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmCarrito frm = new frmCarrito();
+            frmCarrito frm = new frmCarrito(Login);
             frm.FormClosed += (s, args) => this.Close();
             frm.Show();
         }
@@ -177,7 +178,7 @@ namespace VideoGamesStore.FormulariosVentas
                 {
                     var cargar = (from p in db.Products
                                   join c in db.Categorie on p.CategoryId equals c.CategoryId
-                                  where p.Description == nombre 
+                                  where p.Description == nombre
                                   select new
                                   {
                                       Nombre = p.Description,
@@ -215,7 +216,7 @@ namespace VideoGamesStore.FormulariosVentas
         private void btnCarrito_Click(object sender, EventArgs e)
         {
             this.Hide();
-            frmCarrito frm = new frmCarrito();
+            frmCarrito frm = new frmCarrito(Login);
             frm.FormClosed += (s, args) => this.Close();
             frm.Show();
 
