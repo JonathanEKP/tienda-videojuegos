@@ -13,6 +13,7 @@ namespace VideoGamesStore
 {
     public partial class Login : Form
     {
+        Sesion se = new Sesion();
         public Login()
         {
             InitializeComponent();
@@ -55,13 +56,18 @@ namespace VideoGamesStore
                    var lg = (from l in db.Clients
                               where l.email == txtCorreo.Text && l.Password == sPass
                               select l).ToList();
-                   
 
+                    if (lg.Count > 0)
+                    {
+                        var x = lg[0].Login_id;
+                       
+                        se.Login = x;
+                    }
                     
                     if (lst.Count() > 0)
                     {
                         this.Hide();
-                        FormulariosVentas.frmMain frm = new FormulariosVentas.frmMain();
+                        FormulariosVentas.frmMain frm = new FormulariosVentas.frmMain(se.Login);
                         frm.FormClosed += (s, args) => this.Close();
                         frm.Show();
                         

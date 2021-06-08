@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VideoGamesStore.Clases
 {
-    class Conexion
+    public class Operaciones
     {
+        public static double subTotal;
     }
 }

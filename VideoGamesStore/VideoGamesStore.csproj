@@ -65,8 +65,8 @@
       <DependentUpon>ModelProyecto.tt</DependentUpon>
     </Compile>
     <Compile Include="Clases\CategoryViewModel.cs" />
-    <Compile Include="Clases\Conexion.cs" />
     <Compile Include="Clases\Encrypt.cs" />
+    <Compile Include="Clases\Operaciones.cs" />
     <Compile Include="Clases\ProductViewModel.cs" />
     <Compile Include="Clases\Sesion.cs" />
     <Compile Include="Clients.cs">

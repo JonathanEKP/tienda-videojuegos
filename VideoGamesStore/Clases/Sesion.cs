@@ -6,9 +6,16 @@ using System.Threading.Tasks;
 
 namespace VideoGamesStore.Clases
 {
+    
     public class Sesion
     {
-        public static int log_id;
-        public static string nombre, apellido, email;
+       
+        private  int log_id;
+
+        private  string nombre, apellido, email;
+        public int Login {
+            get { return log_id; }
+            set { log_id = value; }
+        } 
     }
 }

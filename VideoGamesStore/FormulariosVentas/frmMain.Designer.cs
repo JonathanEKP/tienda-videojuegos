@@ -30,11 +30,11 @@ namespace VideoGamesStore.FormulariosVentas
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnCarro = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.txtlogin = new System.Windows.Forms.TextBox();
+            this.txtid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtSubTotal = new System.Windows.Forms.TextBox();
@@ -55,17 +55,16 @@ namespace VideoGamesStore.FormulariosVentas
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtBuscar
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.textBox1.Location = new System.Drawing.Point(146, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(276, 21);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Busca un producto";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBuscar.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.txtBuscar.Location = new System.Drawing.Point(146, 12);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(276, 21);
+            this.txtBuscar.TabIndex = 2;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnBuscar
             // 
@@ -79,6 +78,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnBuscar.Size = new System.Drawing.Size(37, 36);
             this.btnBuscar.TabIndex = 3;
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // btnCarro
             // 
@@ -109,12 +109,12 @@ namespace VideoGamesStore.FormulariosVentas
             this.dgvProductos.TabIndex = 5;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
-            // txtlogin
+            // txtid
             // 
-            this.txtlogin.Location = new System.Drawing.Point(12, 12);
-            this.txtlogin.Name = "txtlogin";
-            this.txtlogin.Size = new System.Drawing.Size(100, 20);
-            this.txtlogin.TabIndex = 6;
+            this.txtid.Location = new System.Drawing.Point(12, 12);
+            this.txtid.Name = "txtid";
+            this.txtid.Size = new System.Drawing.Size(100, 20);
+            this.txtid.TabIndex = 6;
             // 
             // label4
             // 
@@ -209,6 +209,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnAñadir.TabIndex = 18;
             this.btnAñadir.Text = "Añadir";
             this.btnAñadir.UseVisualStyleBackColor = false;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // pictureBox1
             // 
@@ -316,11 +317,11 @@ namespace VideoGamesStore.FormulariosVentas
             this.Controls.Add(this.txtCant);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtlogin);
+            this.Controls.Add(this.txtid);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.btnCarro);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBuscar);
             this.HelpButton = true;
             this.MaximizeBox = false;
             this.Name = "frmMain";
@@ -335,11 +336,11 @@ namespace VideoGamesStore.FormulariosVentas
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnCarro;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.TextBox txtlogin;
+        private System.Windows.Forms.TextBox txtid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtSubTotal;

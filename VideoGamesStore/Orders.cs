@@ -26,6 +26,7 @@ namespace VideoGamesStore
         public int OrderStatusID { get; set; }
         public int CartId { get; set; }
     
+        public virtual Cart Cart { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Invoice> Invoice { get; set; }
         public virtual OrderStatuses OrderStatuses { get; set; }
