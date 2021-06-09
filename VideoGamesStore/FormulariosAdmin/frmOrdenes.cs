@@ -144,6 +144,16 @@ namespace VideoGamesStore.FormulariosAdmin
             }
         }
 
-       
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            frmOrdenesReporte report = new frmOrdenesReporte();
+            report.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmFacturaReporte factReport = new frmFacturaReporte();
+            factReport.Show();
+        }
     }
 }

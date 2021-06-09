@@ -36,6 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -47,6 +52,8 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -102,17 +109,41 @@
     <Compile Include="FormulariosAdmin\frmAgregarAdmin.Designer.cs">
       <DependentUpon>frmAgregarAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosAdmin\frmFacturaReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmFacturaReporte.Designer.cs">
+      <DependentUpon>frmFacturaReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosAdmin\frmOrdenes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormulariosAdmin\frmOrdenes.Designer.cs">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormulariosAdmin\frmOrdenesReporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\frmOrdenesReporte.Designer.cs">
+      <DependentUpon>frmOrdenesReporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormulariosAdmin\frmOtherSites.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormulariosAdmin\frmOtherSites.Designer.cs">
       <DependentUpon>frmOtherSites.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosAdmin\ReporteFactura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteFactura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormulariosAdmin\ReportOrdenes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportOrdenes.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormulariosVentas\frmAdd.cs">
       <SubType>Form</SubType>
@@ -131,6 +162,12 @@
     </Compile>
     <Compile Include="FormulariosVentas\frmFactura.Designer.cs">
       <DependentUpon>frmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmForos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormulariosVentas\frmForos.Designer.cs">
+      <DependentUpon>frmForos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormulariosVentas\frmMain.cs">
       <SubType>Form</SubType>
@@ -209,11 +246,25 @@
     <EmbeddedResource Include="FormulariosAdmin\frmAgregarAdmin.resx">
       <DependentUpon>frmAgregarAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\frmFacturaReporte.resx">
+      <DependentUpon>frmFacturaReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmOrdenes.resx">
       <DependentUpon>frmOrdenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\frmOrdenesReporte.resx">
+      <DependentUpon>frmOrdenesReporte.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormulariosAdmin\frmOtherSites.resx">
       <DependentUpon>frmOtherSites.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\ReporteFactura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosAdmin\ReportOrdenes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportOrdenes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
@@ -223,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\frmFactura.resx">
       <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormulariosVentas\frmForos.resx">
+      <DependentUpon>frmForos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormulariosVentas\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -265,6 +319,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ModelProyecto.Context.tt">
