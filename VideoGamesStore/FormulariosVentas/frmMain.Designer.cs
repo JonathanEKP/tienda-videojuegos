@@ -64,7 +64,8 @@ namespace VideoGamesStore.FormulariosVentas
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(276, 21);
             this.txtBuscar.TabIndex = 2;
-            this.txtBuscar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtBuscar.Text = "Busque un articulo";
+            this.txtBuscar.Click += new System.EventHandler(this.txtBuscar_Click);
             // 
             // btnBuscar
             // 

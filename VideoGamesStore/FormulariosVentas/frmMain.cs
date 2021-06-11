@@ -125,11 +125,6 @@ namespace VideoGamesStore.FormulariosVentas
             frm.Show();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             llenar();
@@ -204,13 +199,18 @@ namespace VideoGamesStore.FormulariosVentas
         {
             if (txtBuscar.Text.Equals(""))
             {
-                MessageBox.Show("Debe ingresar un registro para buscar");
+                MessageBox.Show("Debe ingresar un registro para buscar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
                 filtrar(txtBuscar.Text);
 
             }
+        }
+
+        private void txtBuscar_Click(object sender, EventArgs e)
+        {
+            txtBuscar.Text = "";
         }
 
         private void btnCarrito_Click(object sender, EventArgs e)
@@ -226,11 +226,11 @@ namespace VideoGamesStore.FormulariosVentas
         {
             if (txtNombre.Text == String.Empty)
             {
-                MessageBox.Show("Debe seleccionar un juego a agregar");
+                MessageBox.Show("Debe seleccionar un juego a agregar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else if (txtCant.Text=="0")
             {
-                MessageBox.Show("Debe seleccionar la cantidad a agregar");
+                MessageBox.Show("Debe seleccionar la cantidad a agregar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {

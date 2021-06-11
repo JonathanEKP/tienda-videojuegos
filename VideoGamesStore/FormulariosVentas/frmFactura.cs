@@ -12,6 +12,18 @@ namespace VideoGamesStore.FormulariosVentas
 {
     public partial class frmFactura : Form
     {
+        private int log_id;
+        private string nombre, apellido, email;
+        public int Login
+        {
+            get { return log_id; }
+            set { log_id = value; }
+        }
+        public frmFactura(int login)
+        {
+            Login = login;
+            InitializeComponent();
+        }
         public frmFactura()
         {
             InitializeComponent();
