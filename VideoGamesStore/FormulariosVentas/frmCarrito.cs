@@ -104,6 +104,15 @@ namespace VideoGamesStore.FormulariosVentas
                 MessageBox.Show("Ha ocurrido un error" + ex.Message);
             }
 
+            double total = 0;
+            foreach (DataGridViewRow row in dgvprecio.Rows)
+            {
+                total += Convert.ToDouble(row.Cells["Cantidad"].Value) * Convert.ToDouble(row.Cells["Precio"].Value);
+
+            }
+            txtSubtotal.Text = Convert.ToString(total);
+            //Clases.Operaciones op = new Clases.Operaciones();
+            Operaciones.subTotal = total;
 
         }
         private void deshabilitaredit()
@@ -167,31 +176,31 @@ namespace VideoGamesStore.FormulariosVentas
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             //calcular();
-            double total = 0;
-            foreach (DataGridViewRow row in dgvprecio.Rows)
-            {
-                total += Convert.ToDouble(row.Cells["Cantidad"].Value)* Convert.ToDouble(row.Cells["Precio"].Value);
-
-            }
-            txtSubtotal.Text = Convert.ToString(total);
-            //Clases.Operaciones op = new Clases.Operaciones();
-            Operaciones.subTotal = total;
+           
         }
 
         private void frmCarrito_Load(object sender, EventArgs e)
         {
 
         }
+        private void limpiar()
+        {
+            txtCantidad.Text = "0";
+            txtid.Text = "";
+            txtSubtotal.Text = "0";
+            Image Nothing = null;
+            pictureBox1.Image = Nothing;
+        }
 
         private void btnMod_Click(object sender, EventArgs e)
         {
             if (txtid.Text == String.Empty)
             {
-                MessageBox.Show("Debe seleccionar un registro para editar");
+                MessageBox.Show("Debe seleccionar un registro para editar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else if (txtCantidad.Text=="0")
             {
-                MessageBox.Show("Debe ingresar un numero mayor a cero");
+                MessageBox.Show("Debe ingresar un numero mayor a cero","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -202,17 +211,20 @@ namespace VideoGamesStore.FormulariosVentas
                     c.Quantity = cant;
                     db.SaveChanges();
                     cargar();
-                    txtCantidad.Text = "0";
-                    txtSubtotal.Text = "0";
+                    
                 }
             }
+
+            limpiar();
+            cargar();
+            
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
             if (txtSubtotal.Text == "0")
             {
-                MessageBox.Show("Debe generar nuevamente su subtotal");
+                MessageBox.Show("Debe generar su subtotal","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else
             {
@@ -220,6 +232,27 @@ namespace VideoGamesStore.FormulariosVentas
                 frmPago frm = new frmPago(Login);
                 frm.FormClosed += (s, args) => this.Close();
                 frm.Show();
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            if (txtid.Text==String.Empty)
+            {
+                MessageBox.Show("Debe seleccionar un registro para eliminar","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Error );
+            }
+            else
+            {
+                int id = int.Parse(txtid.Text);
+                using(ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Cart c = db.Cart.FirstOrDefault(x => x.CartId == id);
+                    db.Cart.Remove(c);
+                    db.SaveChanges();
+                    limpiar();
+                    cargar();
+                    
+                }
             }
         }
 
@@ -238,7 +271,7 @@ namespace VideoGamesStore.FormulariosVentas
             cant--;
             if (cant < 0)
             {
-                MessageBox.Show("No se admiten numeros menores a cero");
+                MessageBox.Show("No se admiten numeros menores a cero","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 cant++;
             }
             else

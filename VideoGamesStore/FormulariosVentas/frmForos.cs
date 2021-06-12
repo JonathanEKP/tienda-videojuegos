@@ -13,6 +13,25 @@ namespace VideoGamesStore.FormulariosVentas
     public partial class frmForos : Form
     {
         ProyectopooEntities db = new ProyectopooEntities();
+        private int log_id;
+        private string nombre, apellido, email;
+        public int Login
+        {
+            get { return log_id; }
+            set { log_id = value; }
+        }
+        public frmForos(int login)
+        {
+            Login = login;
+            InitializeComponent();
+            cargarDatos();
+            combo1();
+            txtComentario.Enabled = false;
+            txtNombre.Enabled = false;
+            btnComentar.Enabled = false;
+            dgvForo.Visible = false;
+
+        }
         public frmForos()
         {
             InitializeComponent();
@@ -29,7 +48,17 @@ namespace VideoGamesStore.FormulariosVentas
             {
                 using (ProyectopooEntities model = new ProyectopooEntities())
                 {
-                    dgvForo.DataSource = model.Forum.ToList();
+                    var datos = (from d in model.Forum
+                                 select new
+                                 {
+                                     d.Categorie,
+                                     d.CategoryId,
+                                     d.ForumId,
+                                     Nombre = d.Description,
+                                     Comentarios = d.Comments
+                                     
+                                 }).ToList();
+                    dgvForo.DataSource = datos;
                     dgvForo.Columns["ForumId"].Visible = false;
                     dgvForo.Columns["CategoryId"].Visible = false;
                     dgvForo.Columns["Categorie"].Visible = false;
@@ -47,8 +76,8 @@ namespace VideoGamesStore.FormulariosVentas
             }
             //txtID.Visible = false;
             //dgvCategorias.DataSource = db.Categorie.Where(x => x.CategoryId == 1).ToList();
-            dgvForo.Columns[0].HeaderText = "Nombre";
-            dgvForo.Columns[1].HeaderText = "Comentario";
+            //dgvForo.Columns[0].HeaderText = "Nombre";
+            //dgvForo.Columns[1].HeaderText = "Comentario";
             txtComentario.Text = "";
             dgvForo.Enabled = false;
             txtNombre.Text = "";
@@ -93,11 +122,24 @@ namespace VideoGamesStore.FormulariosVentas
             txtComentario.Text = "";
             txtNombre.Text = "";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmMain frm = new frmMain(Login);
+            frm.FormClosed += (s, args) => this.Close();
+            frm.Show();
+
+        }
+
         private void filtrar(string categoria, string criterio = "CategoryId")
         {
             if (!cmbCategoria.Text.Equals(""))
             {
+               
                 dgvForo.DataSource = db.Forum.SqlQuery("select * from Forum where " + criterio + " like '" + categoria + "%'").ToList();
+                
+               
             }
         }
 

@@ -67,7 +67,7 @@
     <Key>
       <PropertyRef Name="OtherSitesId" />
     </Key>
-    <Property Name="OtherSitesId" Type="int" Nullable="false" />
+    <Property Name="OtherSitesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="Webpagelink" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>

@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VideoGamesStore.Clases;
 
 namespace VideoGamesStore.FormulariosVentas
 {
     public partial class frmPago : Form
     {
+        
         private int log_id;
 
         private string nombre, apellido, email;
@@ -49,6 +51,72 @@ namespace VideoGamesStore.FormulariosVentas
                             if (x >= 13 && x <= 18)
                             {
                                 MessageBox.Show("Pago exitoso", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                using (ProyectopooEntities db = new ProyectopooEntities())
+                                {
+                                    var xd = (from c in db.Cart
+                                              where c.Login_id == Login && c.Status=="open"
+                                              select c).ToArray();
+                                    if (xd.Length > 0)
+                                    {
+                                        //int size = xd.Length;
+                                        for (int i = 0; i < xd.Length; i++)
+                                        {
+                                            var cart = xd[i].CartId;
+                                            var q = xd[i].Quantity;
+                                            //var pro = xd[i].ProductId;
+                                            //var qua = xd[i].Quantity;
+                                            //var log = xd[i].Login_id;
+                                            //var st = xd[i].Status;
+                                            Orders o = new Orders();                                               //o.CartId
+                                            o.CartId = cart;
+                                            o.Quantity = q;
+                                            o.Date = DateTime.Now;
+                                            o.OrderStatusID = 1;
+                                            db.Orders.Add(o);
+                                            db.SaveChanges();
+
+                                        }
+
+                                    }
+
+
+                                    var inv = (from q in db.Orders
+                                               where q.Cart.Login_id == Login && q.Cart.Status == "open"
+                                               select q).ToArray();
+                                    if (inv.Length > 0)
+                                    {
+                                        for(int i = 0; i < inv.Length; i++)
+                                        {
+                                            var orid = inv[i].OrderId;
+                                            Invoice inn = new Invoice();
+                                            inn.OrderId = orid;
+                                            inn.Date = DateTime.Now;
+                                            inn.InvoiceTotalAmount = Operaciones.subTotal;
+                                            db.Invoice.Add(inn);
+                                            db.SaveChanges();
+                                        }
+                                    }
+
+                                    var cart1 = (from ca in db.Cart
+                                                where ca.Login_id == Login && ca.Status=="open" select ca).ToArray();
+                                    if (cart1.Length > 0)
+                                    {
+                                        for(int i = 0; i < cart1.Length; i++)
+                                        {
+                                            var id = cart1[i].CartId;
+                                            Cart c = db.Cart.FirstOrDefault(x1 => x1.CartId == id);
+                                            c.Status = "pagado";
+                                            db.SaveChanges();
+
+
+                                        }
+                                    }
+
+
+
+                                }
+
                                 this.Hide();
                                 FormulariosVentas.frmFactura frm = new frmFactura(Login);
                                 frm.FormClosed += (s, args) => this.Close();

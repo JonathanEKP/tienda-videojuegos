@@ -13,7 +13,7 @@ namespace VideoGamesStore.FormulariosAdmin
     public partial class frmOtherSites : Form
     {
         ProyectopooEntities db = new ProyectopooEntities();
-        OtherSites op;
+        //OtherSites op;
         public frmOtherSites()
         {
            
@@ -107,18 +107,31 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(txtUrl.Text.Equals("") || cmbProducto.Text.Equals(""))
+            if (txtUrl.Text.Equals("") || cmbProducto.Text.Equals(""))
             {
                 MessageBox.Show("Debe rellenar todos los campos!", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            op = new OtherSites();
-            op.ProductId = int.Parse(cmbProducto.SelectedValue.ToString());
-            op.Webpagelink = txtUrl.Text;
+            else
+            {
+                using (ProyectopooEntities db1 = new ProyectopooEntities())
+                {
+                    OtherSites op = new OtherSites();
+                    op.ProductId = int.Parse(cmbProducto.SelectedValue.ToString());
+                    if (txtUrl.Text.Length > 50)
+                    {
+                        MessageBox.Show("El link es demasiado largo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
 
-            db.OtherSites.Add(op);
-            db.SaveChanges();
-            cargardatos();
+                    else
+                    {
+                        op.Webpagelink = txtUrl.Text;
+                        db1.OtherSites.Add(op);
+                        db1.SaveChanges();
+                        cargardatos();
+                    }
+                }
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

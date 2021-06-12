@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VideoGamesStore.Clases;
+using System.Diagnostics;
 
 namespace VideoGamesStore.FormulariosVentas
 {
@@ -55,6 +56,7 @@ namespace VideoGamesStore.FormulariosVentas
                 {
                     var cargar = (from p in db.Products
                                   join c in db.Categorie on p.CategoryId equals c.CategoryId
+                                  join o in db.OtherSites on p.ProductId equals o.ProductId
                                   select new
                                   {
                                       Nombre = p.Description,
@@ -63,12 +65,14 @@ namespace VideoGamesStore.FormulariosVentas
                                       Categoria = c.CategoryId + " ." + c.Description,
                                       Imagen = p.Image,
                                       p.ProductId,
-                                      Key = p.ProductKey
+                                      Key = p.ProductKey,
+                                      Sitio=o.Webpagelink
                                   }).ToList();
                     dgvProductos.DataSource = cargar;
                     dgvProductos.Columns["ProductId"].Visible = false;
                     dgvProductos.Columns["Key"].Visible = false;
                     dgvProductos.Columns["Imagen"].Visible = false;
+                    dgvProductos.Columns["Sitio"].Visible = false;
                     
 
                     if (dgvProductos.RowCount > 0)
@@ -103,6 +107,8 @@ namespace VideoGamesStore.FormulariosVentas
                     Bitmap bmp = new Bitmap(ms);
                     pictureBox1.Image = bmp;
                 }
+                link.Text = dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Sitio"].Value.ToString();
+                //lnkL.Text= dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Sitio"].Value.ToString();
 
                 double precio;
                 precio = double.Parse(dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Precio"].Value.ToString());
@@ -132,6 +138,7 @@ namespace VideoGamesStore.FormulariosVentas
 
         private void btnMas_Click(object sender, EventArgs e)
         {
+            cant = int.Parse(txtCant.Text);
             cant++;
             //cargar();
             llenar();
@@ -139,9 +146,17 @@ namespace VideoGamesStore.FormulariosVentas
 
         private void btnMenos_Click(object sender, EventArgs e)
         {
+            cant = int.Parse(txtCant.Text);
             cant--;
             //cargar();
-            llenar();
+            if (cant < 0)
+            {
+                MessageBox.Show("No se admiten valores menores a cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                llenar();
+            }
         }
 
         private void limpiar()
@@ -213,6 +228,20 @@ namespace VideoGamesStore.FormulariosVentas
             txtBuscar.Text = "";
         }
 
+        private void btnForo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmForos frm = new frmForos(Login);
+            frm.FormClosed += (s, args) => this.Close();
+            frm.Show();
+        }
+
+        private void btnUrl_Click(object sender, EventArgs e)
+        {
+            //string lin = link.Text;
+            //Process.Start("lin");
+        }
+
         private void btnCarrito_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -240,6 +269,7 @@ namespace VideoGamesStore.FormulariosVentas
                     ca.Login_id = Login;
                     ca.Quantity = int.Parse(txtCant.Text);
                     ca.ProductId = int.Parse(txtid.Text);
+                    ca.Status = "open";
                     db.Cart.Add(ca);
                     db.SaveChanges();
                 }

@@ -51,6 +51,10 @@ namespace VideoGamesStore.FormulariosVentas
             this.label6 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCarrito = new System.Windows.Forms.Button();
+            this.btnForo = new System.Windows.Forms.Button();
+            this.link = new System.Windows.Forms.Label();
+            this.btnUrl = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +64,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.txtBuscar.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscar.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.txtBuscar.Location = new System.Drawing.Point(146, 12);
+            this.txtBuscar.Location = new System.Drawing.Point(28, 12);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(276, 21);
             this.txtBuscar.TabIndex = 2;
@@ -74,7 +78,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(428, 5);
+            this.btnBuscar.Location = new System.Drawing.Point(310, 5);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(37, 36);
             this.btnBuscar.TabIndex = 3;
@@ -114,7 +118,7 @@ namespace VideoGamesStore.FormulariosVentas
             // 
             this.txtid.Location = new System.Drawing.Point(12, 12);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(100, 20);
+            this.txtid.Size = new System.Drawing.Size(10, 20);
             this.txtid.TabIndex = 6;
             // 
             // label4
@@ -287,13 +291,57 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnCarrito.BackColor = System.Drawing.Color.Gold;
             this.btnCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCarrito.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCarrito.Location = new System.Drawing.Point(622, 223);
+            this.btnCarrito.Location = new System.Drawing.Point(578, 223);
             this.btnCarrito.Name = "btnCarrito";
             this.btnCarrito.Size = new System.Drawing.Size(84, 34);
             this.btnCarrito.TabIndex = 25;
             this.btnCarrito.Text = "Carrito";
             this.btnCarrito.UseVisualStyleBackColor = false;
             this.btnCarrito.Click += new System.EventHandler(this.btnCarrito_Click);
+            // 
+            // btnForo
+            // 
+            this.btnForo.BackColor = System.Drawing.Color.White;
+            this.btnForo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnForo.BackgroundImage")));
+            this.btnForo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnForo.FlatAppearance.BorderSize = 0;
+            this.btnForo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForo.Location = new System.Drawing.Point(353, 5);
+            this.btnForo.Name = "btnForo";
+            this.btnForo.Size = new System.Drawing.Size(44, 36);
+            this.btnForo.TabIndex = 26;
+            this.btnForo.UseVisualStyleBackColor = false;
+            this.btnForo.Click += new System.EventHandler(this.btnForo_Click);
+            // 
+            // link
+            // 
+            this.link.AutoSize = true;
+            this.link.Location = new System.Drawing.Point(403, 26);
+            this.link.Name = "link";
+            this.link.Size = new System.Drawing.Size(0, 13);
+            this.link.TabIndex = 27;
+            // 
+            // btnUrl
+            // 
+            this.btnUrl.BackColor = System.Drawing.Color.Gold;
+            this.btnUrl.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUrl.Location = new System.Drawing.Point(666, 223);
+            this.btnUrl.Name = "btnUrl";
+            this.btnUrl.Size = new System.Drawing.Size(84, 34);
+            this.btnUrl.TabIndex = 28;
+            this.btnUrl.Text = "Abrir url";
+            this.btnUrl.UseVisualStyleBackColor = false;
+            this.btnUrl.Click += new System.EventHandler(this.btnUrl_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(403, 9);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(85, 13);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Sitio relacionado";
             // 
             // frmMain
             // 
@@ -302,6 +350,10 @@ namespace VideoGamesStore.FormulariosVentas
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(762, 467);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.btnUrl);
+            this.Controls.Add(this.link);
+            this.Controls.Add(this.btnForo);
             this.Controls.Add(this.btnCarrito);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.label6);
@@ -358,5 +410,9 @@ namespace VideoGamesStore.FormulariosVentas
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnCarrito;
+        private System.Windows.Forms.Button btnForo;
+        private System.Windows.Forms.Label link;
+        private System.Windows.Forms.Button btnUrl;
+        private System.Windows.Forms.Label label7;
     }
 }

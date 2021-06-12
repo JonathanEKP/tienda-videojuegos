@@ -72,7 +72,7 @@
           <Key>
             <PropertyRef Name="OtherSitesId" />
           </Key>
-          <Property Name="OtherSitesId" Type="int" Nullable="false" />
+          <Property Name="OtherSitesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="Webpagelink" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -320,7 +320,7 @@
           <Key>
             <PropertyRef Name="OtherSitesId" />
           </Key>
-          <Property Name="OtherSitesId" Type="Int32" Nullable="false" />
+          <Property Name="OtherSitesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
           <Property Name="Webpagelink" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_OtherSites_Products" FromRole="OtherSites" ToRole="Products" />

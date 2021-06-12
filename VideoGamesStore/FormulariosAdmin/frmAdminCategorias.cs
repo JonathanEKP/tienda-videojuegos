@@ -77,15 +77,22 @@ namespace VideoGamesStore.FormulariosAdmin
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt16(this.txtID.Text);
-            
-
-            using (ProyectopooEntities db = new ProyectopooEntities())
+            if (txtID.Text == String.Empty)
             {
-                Categorie c = db.Categorie.FirstOrDefault(x => x.CategoryId == id);
-                db.Categorie.Remove(c);
-                db.SaveChanges();
-                cargardatos();
+                MessageBox.Show("Seleccione un registro para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                int id = Convert.ToInt16(this.txtID.Text);
+
+
+                using (ProyectopooEntities db = new ProyectopooEntities())
+                {
+                    Categorie c = db.Categorie.FirstOrDefault(x => x.CategoryId == id);
+                    db.Categorie.Remove(c);
+                    db.SaveChanges();
+                    cargardatos();
+                }
             }
         }
         private void button1_Click(object sender, EventArgs e)

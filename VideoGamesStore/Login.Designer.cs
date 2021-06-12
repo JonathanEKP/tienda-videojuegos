@@ -50,7 +50,7 @@ namespace VideoGamesStore
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(131, 33);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Iniciar sesión";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -62,9 +62,9 @@ namespace VideoGamesStore
             this.label1.Location = new System.Drawing.Point(58, 92);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 48);
+            this.label1.Size = new System.Drawing.Size(142, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Correo electronico o\r\n Usuario";
+            this.label1.Text = "Credenciales de logeo:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -74,9 +74,9 @@ namespace VideoGamesStore
             this.label2.Location = new System.Drawing.Point(58, 174);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 24);
+            this.label2.Size = new System.Drawing.Size(80, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña";
+            this.label2.Text = "Contraseña:";
             // 
             // txtCorreo
             // 
@@ -103,7 +103,7 @@ namespace VideoGamesStore
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(170, 16);
-            this.label4.TabIndex = 8;
+            this.label4.TabIndex = 1222;
             this.label4.Text = "¿Aún no tienes una cuenta?";
             // 
             // label5
@@ -125,7 +125,7 @@ namespace VideoGamesStore
             this.btnRegistrar.Location = new System.Drawing.Point(286, 364);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(98, 28);
-            this.btnRegistrar.TabIndex = 10;
+            this.btnRegistrar.TabIndex = 8;
             this.btnRegistrar.Text = "Registrarse";
             this.btnRegistrar.UseVisualStyleBackColor = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
