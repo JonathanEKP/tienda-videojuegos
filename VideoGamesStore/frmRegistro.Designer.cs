@@ -31,18 +31,18 @@ namespace VideoGamesStore
         {
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -75,27 +75,22 @@ namespace VideoGamesStore
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del usuario";
             // 
-            // label1
+            // txtDireccion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 86);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Nombre";
+            this.txtDireccion.Location = new System.Drawing.Point(151, 247);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtDireccion.MaxLength = 50;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(177, 25);
+            this.txtDireccion.TabIndex = 3;
             // 
-            // label2
+            // txtApellido
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(53, 168);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 17);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Apellido";
+            this.txtApellido.Location = new System.Drawing.Point(151, 160);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(177, 25);
+            this.txtApellido.TabIndex = 2;
             // 
             // label3
             // 
@@ -108,22 +103,27 @@ namespace VideoGamesStore
             this.label3.TabIndex = 4;
             this.label3.Text = "Direccion \r\n";
             // 
-            // txtApellido
+            // label2
             // 
-            this.txtApellido.Location = new System.Drawing.Point(151, 160);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(177, 25);
-            this.txtApellido.TabIndex = 5;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(53, 168);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 17);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Apellido";
             // 
-            // txtDireccion
+            // label1
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(151, 247);
-            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtDireccion.MaxLength = 50;
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(177, 25);
-            this.txtDireccion.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(53, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Nombre";
             // 
             // groupBox2
             // 
@@ -140,24 +140,34 @@ namespace VideoGamesStore
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos de registro";
             // 
-            // label4
+            // txtConfirmar
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 50);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 17);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Correo electronico";
+            this.txtConfirmar.Location = new System.Drawing.Point(157, 153);
+            this.txtConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtConfirmar.Name = "txtConfirmar";
+            this.txtConfirmar.PasswordChar = '*';
+            this.txtConfirmar.Size = new System.Drawing.Size(129, 23);
+            this.txtConfirmar.TabIndex = 6;
             // 
-            // txtCorreo
+            // txtContraseña
             // 
-            this.txtCorreo.Location = new System.Drawing.Point(141, 48);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(145, 23);
-            this.txtCorreo.TabIndex = 4;
+            this.txtContraseña.Location = new System.Drawing.Point(157, 102);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(129, 23);
+            this.txtContraseña.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 159);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(142, 17);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Confirmar contraseña";
             // 
             // label5
             // 
@@ -170,34 +180,24 @@ namespace VideoGamesStore
             this.label5.TabIndex = 5;
             this.label5.Text = "Contraseña";
             // 
-            // label6
+            // txtCorreo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(7, 155);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 17);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Confirmar contraseña";
+            this.txtCorreo.Location = new System.Drawing.Point(141, 48);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(145, 23);
+            this.txtCorreo.TabIndex = 4;
             // 
-            // txtContraseña
+            // label4
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(157, 102);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(129, 23);
-            this.txtContraseña.TabIndex = 7;
-            // 
-            // txtConfirmar
-            // 
-            this.txtConfirmar.Location = new System.Drawing.Point(157, 153);
-            this.txtConfirmar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.PasswordChar = '*';
-            this.txtConfirmar.Size = new System.Drawing.Size(129, 23);
-            this.txtConfirmar.TabIndex = 8;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 50);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 17);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Correo electronico";
             // 
             // btnRegistrarse
             // 
@@ -208,7 +208,7 @@ namespace VideoGamesStore
             this.btnRegistrarse.Location = new System.Drawing.Point(411, 295);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(118, 34);
-            this.btnRegistrarse.TabIndex = 4;
+            this.btnRegistrarse.TabIndex = 7;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = false;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
@@ -222,8 +222,8 @@ namespace VideoGamesStore
             this.btnCancelar.Location = new System.Drawing.Point(537, 295);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(118, 34);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TabIndex = 8;
+            this.btnCancelar.Text = "Regresar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 

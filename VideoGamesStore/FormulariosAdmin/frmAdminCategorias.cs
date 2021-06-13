@@ -54,6 +54,11 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtID.Text = dgvCategorias.SelectedRows[0].Cells[0].Value.ToString();
             this.txtNombreCat.Text = dgvCategorias.SelectedRows[0].Cells[1].Value.ToString();
         }
+        private void limpiar()
+        {
+            txtID.Text = "";
+            txtNombreCat.Text = "";
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -71,6 +76,7 @@ namespace VideoGamesStore.FormulariosAdmin
                     db.Categorie.Add(op);
                     db.SaveChanges();
                     cargardatos();
+                    limpiar();
                 }
             }
         }
@@ -92,6 +98,7 @@ namespace VideoGamesStore.FormulariosAdmin
                     db.Categorie.Remove(c);
                     db.SaveChanges();
                     cargardatos();
+                    limpiar();
                 }
             }
         }
@@ -113,6 +120,7 @@ namespace VideoGamesStore.FormulariosAdmin
                     c.Description = categoria;
                     db.SaveChanges();
                     cargardatos();
+                    limpiar();
                 }
                 
             }
@@ -149,6 +157,7 @@ namespace VideoGamesStore.FormulariosAdmin
             bloquear();
             txtNombreCat.Enabled = true;
             btnGuardar.Enabled = true;
+            limpiar();
         }
     }
 }

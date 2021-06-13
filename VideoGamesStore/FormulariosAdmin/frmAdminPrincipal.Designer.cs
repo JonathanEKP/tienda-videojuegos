@@ -58,7 +58,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnVideojuegos.Margin = new System.Windows.Forms.Padding(2);
             this.btnVideojuegos.Name = "btnVideojuegos";
             this.btnVideojuegos.Size = new System.Drawing.Size(145, 48);
-            this.btnVideojuegos.TabIndex = 0;
+            this.btnVideojuegos.TabIndex = 1;
             this.btnVideojuegos.Text = "Videojuegos";
             this.btnVideojuegos.UseVisualStyleBackColor = true;
             this.btnVideojuegos.Click += new System.EventHandler(this.btnVideojuegos_Click);

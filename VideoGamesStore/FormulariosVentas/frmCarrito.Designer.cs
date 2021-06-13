@@ -29,7 +29,7 @@ namespace VideoGamesStore.FormulariosVentas
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarrito));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
@@ -74,7 +74,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(327, 398);
-            this.dgvProductos.TabIndex = 6;
+            this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
             // 
             // label2
@@ -96,7 +96,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnPagar.Location = new System.Drawing.Point(491, 136);
             this.btnPagar.Name = "btnPagar";
             this.btnPagar.Size = new System.Drawing.Size(167, 34);
-            this.btnPagar.TabIndex = 9;
+            this.btnPagar.TabIndex = 1;
             this.btnPagar.Text = "Pagar";
             this.btnPagar.UseVisualStyleBackColor = false;
             this.btnPagar.Click += new System.EventHandler(this.btnPagar_Click);
@@ -148,14 +148,14 @@ namespace VideoGamesStore.FormulariosVentas
             this.dgvprecio.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvprecio.BackgroundColor = System.Drawing.Color.White;
             this.dgvprecio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvprecio.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvprecio.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvprecio.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvprecio.Enabled = false;
             this.dgvprecio.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -164,7 +164,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.dgvprecio.Name = "dgvprecio";
             this.dgvprecio.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvprecio.Size = new System.Drawing.Size(145, 398);
-            this.dgvprecio.TabIndex = 29;
+            this.dgvprecio.TabIndex = 0;
             // 
             // btnMod
             // 
@@ -176,7 +176,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnMod.Location = new System.Drawing.Point(491, 191);
             this.btnMod.Name = "btnMod";
             this.btnMod.Size = new System.Drawing.Size(167, 34);
-            this.btnMod.TabIndex = 31;
+            this.btnMod.TabIndex = 2;
             this.btnMod.Text = "Editar";
             this.btnMod.UseVisualStyleBackColor = false;
             this.btnMod.Click += new System.EventHandler(this.btnMod_Click);
@@ -191,7 +191,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnMenos.Location = new System.Drawing.Point(635, 36);
             this.btnMenos.Name = "btnMenos";
             this.btnMenos.Size = new System.Drawing.Size(24, 23);
-            this.btnMenos.TabIndex = 34;
+            this.btnMenos.TabIndex = 4;
             this.btnMenos.UseVisualStyleBackColor = false;
             this.btnMenos.Click += new System.EventHandler(this.btnMenos_Click);
             // 
@@ -205,7 +205,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.btnMas.Location = new System.Drawing.Point(608, 36);
             this.btnMas.Name = "btnMas";
             this.btnMas.Size = new System.Drawing.Size(21, 22);
-            this.btnMas.TabIndex = 33;
+            this.btnMas.TabIndex = 3;
             this.btnMas.UseVisualStyleBackColor = false;
             this.btnMas.Click += new System.EventHandler(this.btnMas_Click);
             // 
@@ -235,7 +235,7 @@ namespace VideoGamesStore.FormulariosVentas
             this.label4.Location = new System.Drawing.Point(609, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 20);
-            this.label4.TabIndex = 37;
+            this.label4.TabIndex = 5;
             this.label4.Text = "Eliminar";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 

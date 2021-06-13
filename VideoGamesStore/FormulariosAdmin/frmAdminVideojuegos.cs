@@ -127,6 +127,7 @@ namespace VideoGamesStore.FormulariosAdmin
             //pictureBox1.Image.Dispose();
             Image Nothing = null;
             pictureBox1.Image = Nothing;
+            txtId.Text = "";
         }
 
         private void cargarcmb()
@@ -252,6 +253,34 @@ namespace VideoGamesStore.FormulariosAdmin
                 }
             }
 
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtId.Text == String.Empty)
+                {
+                    MessageBox.Show("Debe seleccionar un juego para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else
+                {
+                    int id = int.Parse(txtId.Text);
+                    using (ProyectopooEntities db = new ProyectopooEntities())
+                    {
+                        Products po = db.Products.FirstOrDefault(x => x.ProductId == id);
+                        db.Products.Remove(po);
+                        db.SaveChanges();
+                        cargar();
+                        refrescar();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al eliminar" + ex.Message);
+            }
         }
     }
 }

@@ -155,5 +155,10 @@ namespace VideoGamesStore.FormulariosAdmin
             frmFacturaReporte factReport = new frmFacturaReporte();
             factReport.Show();
         }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

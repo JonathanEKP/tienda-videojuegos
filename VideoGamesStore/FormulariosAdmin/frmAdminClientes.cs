@@ -211,6 +211,7 @@ namespace VideoGamesStore.FormulariosAdmin
             limpiar();
             bloquear();
             desOcultar();
+            btnBuscar.Enabled = true;
         }
     }
 }

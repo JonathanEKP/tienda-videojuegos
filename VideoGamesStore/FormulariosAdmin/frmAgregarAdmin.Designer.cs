@@ -97,7 +97,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtName.MaxLength = 50;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(193, 20);
-            this.txtName.TabIndex = 12;
+            this.txtName.TabIndex = 1;
             this.txtName.Tag = "";
             // 
             // txtPass
@@ -106,7 +106,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(135, 20);
-            this.txtPass.TabIndex = 14;
+            this.txtPass.TabIndex = 3;
             // 
             // txtApellido
             // 
@@ -114,7 +114,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtApellido.MaxLength = 50;
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(193, 20);
-            this.txtApellido.TabIndex = 13;
+            this.txtApellido.TabIndex = 2;
             // 
             // label3
             // 
@@ -133,7 +133,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtConfirmar.Name = "txtConfirmar";
             this.txtConfirmar.PasswordChar = '*';
             this.txtConfirmar.Size = new System.Drawing.Size(135, 20);
-            this.txtConfirmar.TabIndex = 16;
+            this.txtConfirmar.TabIndex = 4;
             // 
             // btnGuardar
             // 
@@ -144,7 +144,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnGuardar.Location = new System.Drawing.Point(647, 84);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(90, 34);
-            this.btnGuardar.TabIndex = 17;
+            this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -158,7 +158,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnNuevo.Location = new System.Drawing.Point(647, 44);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(90, 34);
-            this.btnNuevo.TabIndex = 18;
+            this.btnNuevo.TabIndex = 6;
             this.btnNuevo.Tag = "Nuevo";
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnSalir.Location = new System.Drawing.Point(647, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(90, 34);
-            this.btnSalir.TabIndex = 19;
+            this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Regresar";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);

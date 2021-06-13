@@ -107,8 +107,8 @@ namespace VideoGamesStore.FormulariosVentas
                     Bitmap bmp = new Bitmap(ms);
                     pictureBox1.Image = bmp;
                 }
-                link.Text = dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Sitio"].Value.ToString();
-                //lnkL.Text= dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Sitio"].Value.ToString();
+                txtlink.Text = dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Sitio"].Value.ToString();
+                
 
                 double precio;
                 precio = double.Parse(dgvProductos.Rows[dgvProductos.CurrentRow.Index].Cells["Precio"].Value.ToString());
@@ -240,6 +240,12 @@ namespace VideoGamesStore.FormulariosVentas
         {
             //string lin = link.Text;
             //Process.Start("lin");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            ProcessStartInfo sinfo = new ProcessStartInfo(e.Link.LinkData.ToString());
+            Process.Start(sinfo);
         }
 
         private void btnCarrito_Click(object sender, EventArgs e)

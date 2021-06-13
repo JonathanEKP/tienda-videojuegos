@@ -36,7 +36,7 @@ namespace VideoGamesStore
             string sPass = Clases.Encrypt.GetSHA256(txtContraseña.Text.Trim());
             if (txtCorreo.Text == String.Empty || txtContraseña.Text == String.Empty)
             {
-                MessageBox.Show("Por favor rellene todos los campos");
+                MessageBox.Show("Por favor rellene todos los campos","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -82,7 +82,7 @@ namespace VideoGamesStore
                     }
                     else
                     {
-                        MessageBox.Show("Usuario o contraseña incorrecta.");
+                        MessageBox.Show("Usuario o contraseña incorrecta.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     }
 
 

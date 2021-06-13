@@ -17,7 +17,15 @@ namespace VideoGamesStore
             InitializeComponent();
         }
 
-
+        private void limpiar()
+        {
+            txtApellido.Text = "";
+            txtConfirmar.Text = "";
+            txtContraseña.Text = "";
+            txtCorreo.Text = "";
+            txtDireccion.Text = "";
+            txtNombre.Text = "";
+        }
         
 
 
@@ -34,30 +42,41 @@ namespace VideoGamesStore
             {
                 using (ProyectopooEntities db = new ProyectopooEntities())
                 {
-
-
-                    Clients Oclients = new Clients();
-                    Oclients.Name = txtNombre.Text;
-                    Oclients.LastName = txtApellido.Text;
-                    Oclients.email = txtCorreo.Text;
-                    Oclients.ShippAdress = txtDireccion.Text;
-                    if (txtContraseña.Text == txtConfirmar.Text)
+                    var lst = from d in db.Clients
+                              where d.email == txtCorreo.Text
+                              select d;
+                    if (lst.Count() > 0)
                     {
-                        string sPass = Clases.Encrypt.GetSHA256(txtContraseña.Text.Trim());
-                        Oclients.Password = sPass;
-                        MessageBox.Show("Cuenta creada con exito!");
-                        db.Clients.Add(Oclients);
-                        db.SaveChanges();
+                        MessageBox.Show("Error, este correo electronico ya está en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+
                     else
                     {
-                        MessageBox.Show("Las contraseñas deben coincidir");
+                        Clients Oclients = new Clients();
+                        Oclients.Name = txtNombre.Text;
+                        Oclients.LastName = txtApellido.Text;
+                        Oclients.email = txtCorreo.Text;
+                        Oclients.ShippAdress = txtDireccion.Text;
+                        if (txtContraseña.Text == txtConfirmar.Text)
+                        {
+                            string sPass = Clases.Encrypt.GetSHA256(txtContraseña.Text.Trim());
+                            Oclients.Password = sPass;
+                            MessageBox.Show("Cuenta creada con exito!","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            db.Clients.Add(Oclients);
+                            db.SaveChanges();
+                            limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Las contraseñas deben coincidir","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        }
+
+
+
+
                     }
-
-
-
-
                 }
+
             }
 
             

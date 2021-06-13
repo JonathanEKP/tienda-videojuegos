@@ -48,6 +48,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnNuevo = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +59,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(115, 32);
-            this.btnEditar.TabIndex = 0;
+            this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -69,7 +70,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(99, 32);
-            this.btnGuardar.TabIndex = 2;
+            this.btnGuardar.TabIndex = 9;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -87,7 +88,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.dgvProductos.RowTemplate.Height = 24;
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(536, 318);
-            this.dgvProductos.TabIndex = 3;
+            this.dgvProductos.TabIndex = 0;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvProductos.Click += new System.EventHandler(this.dgvProductos_Click);
             // 
@@ -130,15 +131,15 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(227, 20);
-            this.txtPrecio.TabIndex = 11;
+            this.txtPrecio.TabIndex = 3;
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(350, 366);
+            this.btnRegresar.Location = new System.Drawing.Point(453, 366);
             this.btnRegresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(144, 32);
-            this.btnRegresar.TabIndex = 14;
+            this.btnRegresar.TabIndex = 7;
             this.btnRegresar.Text = "Regresar a pagina principal";
             this.btnRegresar.UseVisualStyleBackColor = true;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
@@ -160,7 +161,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 32);
-            this.button1.TabIndex = 16;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Subir archivo";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -171,7 +172,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(227, 20);
-            this.txtNombre.TabIndex = 9;
+            this.txtNombre.TabIndex = 1;
             // 
             // lblId
             // 
@@ -194,7 +195,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtFile.Margin = new System.Windows.Forms.Padding(2);
             this.txtFile.Name = "txtFile";
             this.txtFile.Size = new System.Drawing.Size(227, 20);
-            this.txtFile.TabIndex = 17;
+            this.txtFile.TabIndex = 5;
             // 
             // cmbCat
             // 
@@ -202,7 +203,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.cmbCat.Location = new System.Drawing.Point(692, 167);
             this.cmbCat.Name = "cmbCat";
             this.cmbCat.Size = new System.Drawing.Size(227, 21);
-            this.cmbCat.TabIndex = 18;
+            this.cmbCat.TabIndex = 4;
             // 
             // txtKey
             // 
@@ -210,7 +211,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtKey.Margin = new System.Windows.Forms.Padding(2);
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(227, 20);
-            this.txtKey.TabIndex = 10;
+            this.txtKey.TabIndex = 2;
             // 
             // btnNuevo
             // 
@@ -218,7 +219,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(115, 32);
-            this.btnNuevo.TabIndex = 19;
+            this.btnNuevo.TabIndex = 10;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -240,12 +241,24 @@ namespace VideoGamesStore.FormulariosAdmin
             this.txtId.Size = new System.Drawing.Size(10, 20);
             this.txtId.TabIndex = 21;
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(350, 366);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(99, 32);
+            this.btnDel.TabIndex = 8;
+            this.btnDel.Text = "Eliminar";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // frmAdminVideojuegos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(926, 437);
+            this.Controls.Add(this.btnDel);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnNuevo);
@@ -266,6 +279,7 @@ namespace VideoGamesStore.FormulariosAdmin
             this.Controls.Add(this.btnEditar);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdminVideojuegos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración de videojuegos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -295,5 +309,6 @@ namespace VideoGamesStore.FormulariosAdmin
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Button btnDel;
     }
 }
